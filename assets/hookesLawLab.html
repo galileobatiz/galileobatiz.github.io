@@ -1,15 +1,22 @@
+Of course. Here is the corrected code with the file paths updated to match your structure, the necessary CSS framework added, and the spacing fixed with CSS. The date and equations have not been changed as requested.
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
 <title>Physics By Gali</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/stylesheet.css">
+<link rel="stylesheet" href="stylesheet.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
 body {font-family: "Times New Roman", Georgia, Serif;}
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display";
   letter-spacing: 5px;
+}
+h1 {
+  margin-top: 60px; /* Adds space above the main title */
 }
 ul.d {
   list-style-type: square;
@@ -28,8 +35,7 @@ ol.a {
 
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.html" class="w3-bar-item w3-button">Le Physics</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
+    <a href="../index.html" class="w3-bar-item w3-button">Le Physics</a>
     <div class="w3-right w3-hide-small">
       <a href="resultantLab.html" class="w3-bar-item w3-button">Vector Lab</a>
       <a href="freeFallLab.html" class="w3-bar-item w3-button">Free Fall Lab</a>
@@ -39,10 +45,8 @@ ol.a {
 </div>
 
 
-<h1><br> 
-  <br>
- Hooke's Law Lab</h1>
-  <p> <br>
+<h1>Hooke's Law Lab</h1>
+  <p>
 Galileo, Ananya, Tori, Mia?, Sabina <br>
 9-12-24 </p>
 
@@ -76,7 +80,7 @@ Galileo, Ananya, Tori, Mia?, Sabina <br>
 
 <p> After mathing and peeping 
 </p>
-<img src="hookesLawLab.png" alt="Hooke's Law Lab" width="1000" height="700"> 
+<img src="../images/hookesLawLab.png" alt="Hooke's Law Lab" style="max-width:1000px; width:100%; height:auto;"> 
 <p> As seen in the calculations, our hypothesis was incorrect and the peep went too far and hit the ceiling.
 </p>
   <h2> Error Analysis: </h2>
@@ -87,3 +91,4 @@ Galileo, Ananya, Tori, Mia?, Sabina <br>
  <p class="w3-large"> In conclusion, our hypothesis that 0.68m of pull back at 30 degrees would launch the peep 10 meters was incorrect and something caused the peep to go way too far. Knowing how to properly measure and apply spring constants has applications in archery, bridges, and trampolines</p>
 </body>
 </html>
+```
