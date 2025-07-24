@@ -26,18 +26,51 @@ ol.a {
 
 
   
-
 <div class="w3-top">
   <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
-    <a href="index.html" class="w3-bar-item w3-button">Le Physics</a>
-    <!-- Right-sided navbar links. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="assets/resultantLab.html" class="w3-bar-item w3-button">Vector Lab</a>
-      <a href="assets/freeFallLab.html" class="w3-bar-item w3-button">Free Fall Lab</a>
-      <a href="assets/pumpkinChunkin.html" class="w3-bar-item w3-button">Pumpkin Chunkin</a>
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
     </div>
+
   </div>
 </div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'assets/resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'assets/freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'assets/pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'assets/frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'assets/hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'assets/stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'assets/chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'assets/kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'assets/rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'assets/slideLab.html' },
+    { text: "Magnet Field Lab", href: 'assets/magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
 
 
 <h1><br> 
