@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Tides Lab</h1>
+<p style="text-align: center;"><em>Galileo— 9-2-25</em></p>
+<p style="text-align: center;">(graphics are a work in progress)</p>
+
+<h2>Introduction:</h2>
+<p>In this Lab we analyzed tidal range and stuff</p>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Unclear</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li>Still no clue</li>
+
+</ol>
+
+<h2>Data and Analysis:</h2>
+
+<p>Using the values from our one and only trial, we verified sum stuff</p>
+
+
+<h2>Error Analysis:</h2>
+<p>are there errors in such a lab?</p>
+
+<h2>Conclusion:</h2>
+<p>Theres no conclusion quite yet</p>
+
+<h2>Sources:</h2>w
+<ul class="d">
+  <li>Lab Guidelines and Rubric</li>
+  <li>In-class help</li>
+  <li>W3schools coding website to help me code the website more pretty</li>
+</ul>
+</div>
+
+<footer>
+  <p>© 2024 Physics By Gali. Lab created by Galileo</p>
+</footer>
+
+</body>
+</html>
