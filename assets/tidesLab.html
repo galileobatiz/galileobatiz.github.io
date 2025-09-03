@@ -1,3 +1,8 @@
+It seems you've provided the content for a worksheet and your own answers to the questions. I will now create the HTML code for this worksheet in the same style as the "Kirchhoff's Laws Lab" page you provided earlier.
+
+-----
+
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -108,48 +113,111 @@ footer {
   }
   navContainer.innerHTML = navHTML;
 </script>
+
 <div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
 
-<h1 style="text-align: center;">Tides Lab</h1>
-<p style="text-align: center;"><em>Galileo— 9-2-25</em></p>
-<p style="text-align: center;">(graphics are a work in progress)</p>
+<h1 style="text-align: center;">Tides Worksheet</h1>
+<p style="text-align: center;"><em>Galileo Batiz Shtromberg — 9-3-25</em></p>
 
 <h2>Introduction:</h2>
-<p>In this Lab we analyzed tidal range and stuff</p>
+<p>People that make their living on or from the sea, such as fishermen and sailors, must pay careful attention to the tides. Even people that simply enjoy visiting the beach or going boating are affected by the daily tidal cycle. In many areas, there is just a foot or two difference between successive high and low tides. However, this difference, called the tidal range, varies over time and from place to place. The greatest tidal range in the world occurs in Canada’s Bay of Fundy, where the difference between low and high tides can be as much as 21 meters (nearly 70 feet)!</p>
+<p>The greatest tidal range, the highest high tides and lowest low tides all occur when the sun and moon are lined up. As you will see below, these so-called <strong>spring tides</strong> occur in a regular pattern. Some animals (e.g., horseshoe crabs, sea turtles) lay eggs onshore on the date of the highest high tide in a season. The smallest tidal range, lowest high tides and highest low tides also occur in a regular pattern. These are called <strong>neap tides</strong>.</p>
 
-<h2>Materials:</h2>
-<ul class="d">
-  <li>Unclear</li>
-</ul>
+<h2>Data:</h2>
+<figure style="text-align: center;">
+    <img src="/images/tideTable.jpeg" alt="Tide Data Table" style="border: 1px solid #ccc; max-width: 100%;">
+    <figcaption style="font-size: 16px; font-style: italic;">Table of daily high and low tide levels.</figcaption>
+</figure>
 
-<h2>Procedure:</h2>
+<table>
+  <tr><th>Date</th><th>High Tide (m)</th><th>Low Tide (m)</th><th>Tidal Range (m)</th></tr>
+  <tr><td>January 1</td><td>0.54</td><td>0.49</td><td>0.05</td></tr>
+  <tr><td>January 2</td><td>0.59</td><td>0.46</td><td>0.13</td></tr>
+  <tr><td>January 3</td><td>0.66</td><td>0.31</td><td>0.35</td></tr>
+  <tr><td>January 4</td><td>0.75</td><td>0.13</td><td>0.62</td></tr>
+  <tr><td>January 5</td><td>0.85</td><td>-0.06</td><td>0.91</td></tr>
+  <tr><td>January 6</td><td>0.95</td><td>-0.23</td><td>1.18</td></tr>
+  <tr><td>January 7</td><td>1.05</td><td>-0.37</td><td>1.42</td></tr>
+  <tr><td>January 8</td><td>1.13</td><td>-0.46</td><td>1.59</td></tr>
+  <tr><td>January 9</td><td>1.18</td><td>-0.5</td><td>1.68</td></tr>
+  <tr><td>January 10</td><td>1.19</td><td>-0.48</td><td>1.67</td></tr>
+  <tr><td>January 11</td><td>1.15</td><td>-0.42</td><td>1.57</td></tr>
+  <tr><td>January 12</td><td>1.05</td><td>-0.31</td><td>1.36</td></tr>
+  <tr><td>January 13</td><td>0.9</td><td>-0.17</td><td>1.07</td></tr>
+  <tr><td>January 14</td><td>0.72</td><td>-0.02</td><td>0.74</td></tr>
+  <tr><td>January 15</td><td>0.53</td><td>0.12</td><td>0.41</td></tr>
+  <tr><td>January 16</td><td>0.34</td><td>0.25</td><td>0.09</td></tr>
+  <tr><td>January 17</td><td>0.72</td><td>0.15</td><td>0.57</td></tr>
+  <tr><td>January 18</td><td>0.77</td><td>0.00</td><td>0.77</td></tr>
+  <tr><td>January 19</td><td>0.83</td><td>-0.13</td><td>0.96</td></tr>
+  <tr><td>January 20</td><td>0.88</td><td>-0.22</td><td>1.10</td></tr>
+  <tr><td>January 21</td><td>0.93</td><td>-0.27</td><td>1.20</td></tr>
+  <tr><td>January 22</td><td>0.96</td><td>-0.31</td><td>1.27</td></tr>
+  <tr><td>January 23</td><td>0.98</td><td>-0.31</td><td>1.29</td></tr>
+  <tr><td>January 24</td><td>0.98</td><td>-0.30</td><td>1.28</td></tr>
+  <tr><td>January 25</td><td>0.98</td><td>-0.27</td><td>1.25</td></tr>
+  <tr><td>January 26</td><td>0.94</td><td>-0.22</td><td>1.16</td></tr>
+  <tr><td>January 27</td><td>0.89</td><td>-0.16</td><td>1.05</td></tr>
+  <tr><td>January 28</td><td>0.82</td><td>-0.09</td><td>0.91</td></tr>
+  <tr><td>January 29</td><td>0.73</td><td>-0.01</td><td>0.74</td></tr>
+  <tr><td>January 30</td><td>0.60</td><td>0.08</td><td>0.52</td></tr>
+  <tr><td>January 31</td><td>0.45</td><td>0.17</td><td>0.28</td></tr>
+  <tr><td>February 1</td><td>0.28</td><td>0.23</td><td>0.05</td></tr>
+  <tr><td>February 2</td><td>0.72</td><td>0.07</td><td>0.65</td></tr>
+  <tr><td>February 3</td><td>0.78</td><td>-0.12</td><td>0.90</td></tr>
+  <tr><td>February 4</td><td>0.87</td><td>-0.28</td><td>1.15</td></tr>
+  <tr><td>February 5</td><td>0.98</td><td>-0.41</td><td>1.39</td></tr>
+  <tr><td>February 6</td><td>1.07</td><td>-0.49</td><td>1.56</td></tr>
+  <tr><td>February 7</td><td>1.13</td><td>-0.51</td><td>1.64</td></tr>
+  <tr><td>February 8</td><td>1.13</td><td>-0.46</td><td>1.59</td></tr>
+  <tr><td>February 9</td><td>1.07</td><td>-0.37</td><td>1.44</td></tr>
+</table>
+
+<h2>Questions:</h2>
 <ol class="a">
-  <li>Still no clue</li>
-
+  <li>Look at the data for high and low tide levels on the table on the next page. Find the highest (i.e., maximum) high tide and the lowest (i.e., minimum) low tide and write down the date of each. These are spring tides.</li>
+  <li>Look at the table and find the date(s) of the lowest high tide and the highest low tide and record them. These are neap tides.</li>
+  <li>Now calculate the tidal range for each day by finding the difference between high tide and low tide levels for that day. Record it in the column titled “Tidal Range.” The value for January 1 is given.</li>
+  <li>Look at the day-to-day change in the difference between high and low tide levels that you recorded for Question 3. Describe any pattern that you detect.</li>
+  <li>Now graph the daily high and low tide levels on a sheet of graph paper. You may want to use one color for high tides and another for low tides to avoid possible confusion. Make tide level the y-axis and date of the month the x-axis. Before you begin, carefully consider what graph intervals you will use for each axis so that all of the data will fit on a single sheet.</li>
+  <li>Your completed graph should show three spring tides and three neap tides. Note that all of the spring tides are not the same height. Rather, each spring tide occurs when high tide is at a “local maximum,” that is the highest value in a certain range, and low tide is at a “local minimum.” The exact opposite holds true for neap tides. Label each of the spring and neap tides on your graph.</li>
+  <li>As you know, the phases of the moon gradually change in a regular pattern. Add the following information on the dates of various lunar phases to your graph: first quarter moon on January 2 and again on February 1; full moon on January 9 and again on February 8; last quarter moon on January 16; and new moon on January 24.</li>
+  <li>Try to find a relationship between the pattern of high and low tides that you have drawn and the phases of the moon. What, if any, relationship appears to exist?</li>
+  <li>Predict when the following will occur: (1) the next spring tide; (2) the next neap tide; (3) the next new moon; and (4) the next full moon. Explain your reasoning for each.</li>
 </ol>
 
-<h2>Data and Analysis:</h2>
+<h2 style="text-align: center;">Galileo's Answers:</h2>
+<hr>
 
-<p>Using the values from our one and only trial, we verified sum stuff</p>
-
-
-<h2>Error Analysis:</h2>
-<p>are there errors in such a lab?</p>
-
-<h2>Conclusion:</h2>
-<p>Theres no conclusion quite yet</p>
-
-<h2>Sources:</h2>w
+<h3 style="text-align: center;">Analysis of Spring and Neap Tides</h3>
+<p><strong>Spring Tides:</strong></p>
 <ul class="d">
-  <li>Lab Guidelines and Rubric</li>
-  <li>In-class help</li>
-  <li>W3schools coding website to help me code the website more pretty</li>
+    <li>Highest High Tide: Jan 10 at 1.19m</li>
+    <li>Lowest Low Tide: Feb 7 at -0.51m</li>
 </ul>
+<p><strong>Neap Tides:</strong></p>
+<ul class="d">
+    <li>Lowest High Tide: Feb 1 at 0.28m</li>
+    <li>Highest Low Tide: Jan 1 at 0.41m</li>
+</ul>
+
+<h3 style="text-align: center;">Detected Patterns in Tidal Range</h3>
+<p>A roughly 16 day cycle shows a high and low mimicking the spring and neap tides, and also corresponds with lunar phases such as a peak near the full moon, and dips at the quarter moons. These lunar patterns also affect the tides directly, with the full and new moons having the highest highs and lowest lows, and the quarters being the most tame.</p>
+
+<h3 style="text-align: center;">Predicting Next Tides</h3>
+<p>Because the spring tides have a roughly 15 day cycle, and the latest one was February 10th, the next one will likely be either February 25th or 26th. The Neap tides follow a similar cycle, but the latest one was February 2nd, so the next will likely be on the 17th or 18th. The New Moon and Full Moon follow a well known 30ish day cycle, so the next Full Moon will be around March 10th, and the next New Moon will be around Feb 23.</p>
+
+<figure style="text-align: center;">
+    <img src="/images/tideGraph.jpeg" alt="Tide Level Graph" style="border: 1px solid #ccc; max-width: 100%;">
+    <figcaption style="font-size: 16px; font-style: italic;">Hand-drawn graph of the tide data.</figcaption>
+</figure>
+
 </div>
 
 <footer>
-  <p>© 2024 Physics By Gali. Lab created by Galileo</p>
+  <p>© 2024 Physics By Gali. Worksheet created by Galileo Batiz Shtromberg.</p>
 </footer>
 
 </body>
 </html>
+```
