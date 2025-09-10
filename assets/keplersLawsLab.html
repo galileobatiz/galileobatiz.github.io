@@ -1,1 +1,221 @@
+<!DOCTYPE html>
 
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'tidesLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += &lt;a href=&quot;${link.href}&quot; class=&quot;w3-bar-item w3-button&quot;&gt;${link.text}&lt;/a&gt;;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Kepler’s Laws Lab</h1>
+<p style="text-align: center;"><em>Galileo, Ananya, Tori, Yona — 9-9-25</em></p>
+<p style="text-align: center;">(graphics are progressing if I do say so myself)</p>
+
+<h2>Introduction:</h2>
+<p>In this lab we measured eccentricities, calculated orbits, and determined aphelions of different ellipses/orbits in order to learn more about Kepler’s Laws. We used this new knowledge combined with information about Pluto in order to argue for or against Pluto’s status as a planet. I hypothesize that Pluto is a planet because it is a big rock.</p>
+
+<h3>Kepler’s Laws:</h3>
+<p>
+The orbit of every planet in a two body system can be described mathematically by a secondary planet tracing the perimeter of an ellipse with the primary body as one of its foci.
+</p>
+<p>
+The area of the path swept out during a consistent time interval of an orbit will not vary.
+</p>
+<p>
+The square of the period of the orbit is directly proportional to the cube of its radius.
+</p>
+
+<h3>Formulas Used:</h3>
+<pre>
+e = (distance between foci) / (major axis)
+1/2 x (Dperihelion) x (vperihelion) x (time) = 1/2 x (Daphelion) x (vaphelion) x (time)
+Aphelion or Perehelion = (SemiMajorAxis)(1 +/- Eccentricity)
+</pre>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Two tacks</li>
+  <li>Piece of string</li>
+  <li>Paper and pencil</li>
+  <li>Ruler or measuring tape</li>
+  <li>Data for orbital periods and semi-major axes of Jupiter's moons (Almathea, Io, Europa, Callisto, Ganymede)</li>
+  <li>Data for Pluto's semi-major axis and eccentricity</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li>
+    Kepler’s First Law
+    <ol>
+      <li>Get two tacks and a piece of string. On your paper, place the two tacks a small distance apart, pinning down the ends of the string. Be sure to leave some slack in the string.</li>
+      <li>Using the string as a guide (i.e., place the pencil inside the string loop and pull the loop taut), draw an ellipse.</li>
+      <li>Now measure and write down the distance between the foci AND the length of the major axis of the ellipse.</li>
+      <li>Divide the distance between the foci by the length of the major axis. This quantity is known as the eccentricity, "e".</li>
+    </ol>
+  </li>
+  <li>
+    Kepler’s Third Law
+    <ol>
+      <li>Create a table to hold the values of orbital period (T), semi-major axis (a), and T²/a³ for Almathea, Io, Europa, Callisto, and Ganymede.</li>
+      <li>Look at your values of T²/a³: does Kepler’s third law hold? Your numbers are probably not exactly as you expected. Comment on sources of error in your measurements.</li>
+    </ol>
+  </li>
+  <li>
+    Kepler’s Second Law
+    <ol>
+      <li>Determine the distance (D_aphelion) between Pluto and the sun at aphelion. You should be able to determine this using just the semi-major axis and the eccentricity.</li>
+      <li>Determine the distance (D_perihelion) between Pluto and the sun at perihelion. Again, you should be able to determine this using just the semi-major axis and the eccentricity.</li>
+      <li>Kepler's Second Law allows us to determine the ratio between Pluto's velocity at aphelion and perihelion: v_aphelion/v_perihelion. To do this you need to find the area swept out by Pluto's orbit. This can be approximately described as a triangle with: <br>Area = 
+frac12
+times(
+textDistancetosun)
+times(
+textCurrentVelocity)
+times(
+textTime).<br> The law states that planets sweep out 'equal areas in equal times': this means that the area swept out in a fixed time interval (say a week) is the same at perihelion as it is at aphelion. Therefore we can say: 
+frac12
+times(D_perihelion)
+times(v_perihelion)
+times(
+texttime)=
+frac12
+times(D_aphelion)
+times(v_aphelion)
+times(
+texttime). Use this equation to determine v_aphelion/v_perihelion.</li>
+      <li>Pluto's minimum orbital velocity is 3.7 km/sec. Determine values for v_aphelion and v_perihelion.</li>
+    </ol>
+  </li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+<figure style="text-align: center;">
+  <img src="/images/keplersLawsLab.jpg" alt="Kepler's Laws Lab Data" width="800" style="border: 1px solid #ccc;">
+  <figcaption style="font-size: 16px; font-style: italic;">Our carrying out of the procedure </figcaption>
+</figure>
+
+<h2>Error Analysis:</h2>
+<p>Possible errors could include our inaccuracy when measuring the ellipses with a paper tube and some pencils poked through the table, our choice of days rather than a more precise measurement for the moons, and rounding. We could likely remedy these by following the procedure properly, taking care to draw multiple ellipses to average out errors; finding increasingly precise measurements for the periods and distances of Jupiter’s moons; and rounding less when doing math.</p>
+
+<h2>Conclusion:</h2>
+<p>While Kepler’s First Law was assumed, our findings served as evidence to support the Second and Third Laws. These are important to understanding the make of our solar system, and practical applications include helping to find more precise details about our own orbit/an earth year, as well as judging whether or not Pluto is a planet. My hypothesis that Pluto is a planet was not directly confirmed, but I can conjecture that due to its high eccentricity compared to Jupiter and its moons, Pluto is not a planet.</p>
+
+<h2>Sources:</h2>
+<ul class="d">
+  <li>Lab Guidelines and Rubric</li>
+  <li>In-class help</li>
+</ul>
+</div>
+
+<footer>
+  <p>© 2024 Physics By Gali. Lab created by Galileo, Ananya, Tori, and Yona.</p>
+</footer>
+
+</body>
+</html>
