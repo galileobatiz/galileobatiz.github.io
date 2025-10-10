@@ -1,1 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
 
+  </div>
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Simple Harmonic Motion Lab</h1>
+<p style="text-align: center;"><em>Galileo, Ananya, Tori, Yona — 9-9-25</em></p>
+<p style="text-align: center;">(graphics are a work in progress)</p>
+
+<h2>Introduction:</h2>
+<p>In this lab we used a swingset and some new formulas about harmonic motion and gravity in order to try and determine the mass of the Earth. We did this by first finding the radius of the earth through some sunset angle shenanigans, and then combined that with some simple measurement about the period of a playground swingset in order to derive the mass of the earth. My hypothesis based on having looked it up is that the Earth has a mass of around 5.97*10^24 kg.</p>
+
+<h2>Formulas Used:</h2>
+<p>
+    <code>(difference in times)/(1 day) = (arclength subtended)/(360 degrees)</code>
+</p>
+<p>
+    <code>(Radius of Earth)(Radius of Earth + your height in cm) = cos(angle subtended)</code>
+</p>
+<p>
+    <code>g = L(2π/T)²</code>
+</p>
+<p>
+    <code>M = g(R²)/G</code>
+</p>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Stopwatch (iPhone is OK)</li>
+  <li>Swings</li>
+  <li>Tape measure</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li><b>Measure the Radius of the Earth (Lab Prep):</b>
+    <ul>
+      <li>Stand facing the east at sunrise or west at sunset.</li>
+      <li>From a standing position, use a stopwatch to measure the time it takes for the sun to crest/dip below the horizon again after you lie down on your belly.</li>
+      <li>From a belly position, use a stopwatch to measure the time it takes for the sun to dip/crest the horizon again after you stand up.</li>
+      <li>Use the following formulas to find the radius of the Earth (R):<br>
+        <code>(difference in times)/(1 day) = (arclength subtended)/(360 degrees)</code><br>
+        <code>(R)(R + your height in cm) = cos(angle subtended)</code>
+      </li>
+    </ul>
+  </li>
+  <li><b>Measure the Pendulum Period (Lab Period Procedure):</b>
+    <ul>
+      <li>Divide into groups of 3-4.</li>
+      <li>Measure the length of the swing (L). We measured from the pivot point at the top of the chain to the bottom of the swing seat.</li>
+      <li>Pull the swing back to a chosen height and release it.</li>
+      <li>Simultaneously start the stopwatch as you release the swing and stop it after a number of full swings. We measured 10 full back-and-forth swings.</li>
+      <li>Repeat the measurement multiple times to get a series of times. We conducted 10 trials.</li>
+      <li>Calculate the average period (T) by dividing the total time by the number of swings.</li>
+      <li>Calculate the uncertainty by tossing out the longest and shortest times, subtracting the new shortest from the new longest, and dividing by 2.</li>
+    </ul>
+  </li>
+  <li><b>Calculations:</b>
+    <ul>
+      <li>Solve for the acceleration due to gravity (g) using the formula:<br>
+        <code>g = L(2T)^2</code></li>
+      <li>Find the mass of the Earth (M) using the gravitational force formula, where G is the gravitational constant ($6.674 \times 10^{-11} \text{ m}^3\text{ kg}^{-1}\text{ s}^{-2}$):<br>
+        <code>M = g(R^2)/G</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+<h3 style="text-align: center;">Figure 1: Swingset Measurement Data</h3>
+<figure style="text-align: center;">
+  <img src="/images/harmonicMotionLab.png" alt="Table of swing period measurements" width="600" style="border: 1px solid #ccc;">
+  <figcaption style="font-size: 16px; font-style: italic;">Measured times for 3 full swings across 10 trials.</figcaption>
+</figure>
+<p><b>Data:</b></p>
+<ul class="d">
+  <li>Height (h): 170 cm</li>
+  <li>Time Difference (Sunset): 12.16 s</li>
+  <li>Angle for Sunset: 0.0506 degrees</li>
+  <li>Radius of Earth Calculated: 1829000m</li>
+  <li>Error: 90.9%</li>
+  <li>Length of Swing (L): 1.82 m</li>
+  <li>Trial Times: 7.41 s, 7.14 s, 7.54 s, 7.50 s, 7.17 s, 7.51 s, 7.51 s, 7.49 s, 7.44 s, 7.52 s</li>
+  <li>Average Time for 10 swings: 7.45 s</li>
+  <li>Period (T): 2.48 s</li>
+  <li>Uncertainty: 0.185 s</li>
+</ul>
+
+<p><b>Calculations:</b></p>
+<ul class="d">
+  <li><b>Acceleration due to gravity (g):</b><br>
+    <code>g = L(2pi/T)^2 = 1.828(2 * 3.14/2.48)^2 = 11.72 m/s^2</code></li>
+  <li><b>Mass of the Earth (M):</b><br>
+    <code>M = g(R^2)/G = (11.72)(1.829000)^2 / (6.674 x 10^-11) = 5.87 x 10^23 kg</code></li>
+</ul>
+
+
+<h2>Error Analysis:</h2>
+<p> Considering the 90% error I got, it would seem that our errors were staggering, but I suspect that the immensity we are working has much to do with it. For example, if my sunset stopwatch was just a few seconds shorter or longer it would have made my calculation differ by hundreds or thousands of kilometers. My innacurate timing of the sunset was likely one error, with the degree of precision required being a large hurdle. Because it can only be done once, it would likely take a few weeks to get enough measurements to average into something respectable, or an extremely precise system for measuring when the sun dissapears from view(maybe using lasers?). Another error was the timing of the swingset, and our inconsistent height of release, leading to an incorrect gravitational constant. This could be rectified also by attempting to average many attempts or finding a more consistent system. Perhaps a ball and chain, released by an automatic timer at a specific height? The ball and chain would also solve another source of error, which was the swing's wierd construction.  
+  
+</p>
+
+<h2>Conclusion:</h2>
+<p>
+ We found that although our strategy worked for somewhat of a ballpark estimate of the mass of the earth, it was still off by 90% from our hypothesis, and likely needs some refinement. Regardless, having some idea of the mass of the Earth without being able to weight the whole thing could help advance our understanding of the solar system and other planetary bodies. It should also be noted that we still don’t have a way to directly weigh the Earth, and so exercises like this one are the first step in any attempt towards doing our best. Harmonic motion laws have other real world applications like grandfather clock making and bell smithing.
+</p>
+
+<h2>Sources:</h2>
+<ul class="d">
+  <li>Lab Guidelines and Rubric</li>
+  <li>In-class help</li>
+</ul>
+</div>
+
+<footer>
+  <p>© 2025 Physics By Gali. Lab created by Galileo, Ananya, Tori, and Yona.</p>
+</footer>
+
+</body>
+</html>
