@@ -60,6 +60,30 @@ footer {
   padding: 20px 0;
   border-top: 1px solid #ccc;
 }
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.w3-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+}
+.w3-bar-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+.w3-card {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-right {
+    display: flex; 
+}
+.w3-hide-small {
+}
 </style>
 </head>
 <body class="w3-white">
@@ -108,7 +132,8 @@ footer {
   }
   navContainer.innerHTML = navHTML;
 </script>
-<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 90px auto 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
 
 <h1 style="text-align: center;">Simple Harmonic Motion Lab</h1>
 <p style="text-align: center;"><em>Galileo, Ananya, Tori, Yona — 9-9-25</em></p>
@@ -125,10 +150,10 @@ footer {
     <code>(Radius of Earth)(Radius of Earth + your height in cm) = cos(angle subtended)</code>
 </p>
 <p>
-    <code>g = L(2π/T)²</code>
+    <code>g = L(2π/T)²</code> (Derived from $T = 2\pi\sqrt{L/g}$)
 </p>
 <p>
-    <code>M = g(R²)/G</code>
+    <code>M = g(R²)/G</code> (Derived from the Law of Universal Gravitation)
 </p>
 
 <h2>Materials:</h2>
@@ -165,9 +190,9 @@ footer {
   <li><b>Calculations:</b>
     <ul>
       <li>Solve for the acceleration due to gravity (g) using the formula:<br>
-        <code>g = L(2T)^2</code></li>
+        <code>g = L(2π/T)²</code></li>
       <li>Find the mass of the Earth (M) using the gravitational force formula, where G is the gravitational constant ($6.674 \times 10^{-11} \text{ m}^3\text{ kg}^{-1}\text{ s}^{-2}$):<br>
-        <code>M = g(R^2)/G</code></li>
+        <code>M = g(R²)/G</code></li>
     </ul>
   </li>
 </ol>
@@ -176,15 +201,15 @@ footer {
 <h3 style="text-align: center;">Figure 1: Swingset Measurement Data</h3>
 <figure style="text-align: center;">
   <img src="/images/harmonicMotionLab.png" alt="Table of swing period measurements" width="600" style="border: 1px solid #ccc;">
-  <figcaption style="font-size: 16px; font-style: italic;">Measured times for 3 full swings across 10 trials.</figcaption>
+  <figcaption style="font-size: 16px; font-style: italic;">Math and everything</figcaption>
 </figure>
 <p><b>Data:</b></p>
 <ul class="d">
   <li>Height (h): 170 cm</li>
   <li>Time Difference (Sunset): 12.16 s</li>
   <li>Angle for Sunset: 0.0506 degrees</li>
-  <li>Radius of Earth Calculated: 1829000m</li>
-  <li>Error: 90.9%</li>
+  <li>Radius of Earth Calculated: 1,829,000 m</li>
+  <li>Error: 90.9%</li>
   <li>Length of Swing (L): 1.82 m</li>
   <li>Trial Times: 7.41 s, 7.14 s, 7.54 s, 7.50 s, 7.17 s, 7.51 s, 7.51 s, 7.49 s, 7.44 s, 7.52 s</li>
   <li>Average Time for 10 swings: 7.45 s</li>
@@ -195,15 +220,15 @@ footer {
 <p><b>Calculations:</b></p>
 <ul class="d">
   <li><b>Acceleration due to gravity (g):</b><br>
-    <code>g = L(2pi/T)^2 = 1.828(2 * 3.14/2.48)^2 = 11.72 m/s^2</code></li>
+    <code>g = L(2π/T)² = 1.828 * (2 * 3.14 / 2.48)² ≈ 11.72 m/s²</code></li>
   <li><b>Mass of the Earth (M):</b><br>
-    <code>M = g(R^2)/G = (11.72)(1.829000)^2 / (6.674 x 10^-11) = 5.87 x 10^23 kg</code></li>
+    <code>M = g(R²)/G = (11.72)(1,829,000)² / (6.674 x 10⁻¹¹) ≈ 5.87 x 10²³ kg</code></li>
 </ul>
 
 
 <h2>Error Analysis:</h2>
-<p> Considering the 90% error I got, it would seem that our errors were staggering, but I suspect that the immensity we are working has much to do with it. For example, if my sunset stopwatch was just a few seconds shorter or longer it would have made my calculation differ by hundreds or thousands of kilometers. My innacurate timing of the sunset was likely one error, with the degree of precision required being a large hurdle. Because it can only be done once, it would likely take a few weeks to get enough measurements to average into something respectable, or an extremely precise system for measuring when the sun dissapears from view(maybe using lasers?). Another error was the timing of the swingset, and our inconsistent height of release, leading to an incorrect gravitational constant. This could be rectified also by attempting to average many attempts or finding a more consistent system. Perhaps a ball and chain, released by an automatic timer at a specific height? The ball and chain would also solve another source of error, which was the swing's wierd construction.  
-  
+<p> Considering the 90% error I got, it would seem that our errors were staggering, but I suspect that the immensity we are working has much to do with it. For example, if my sunset stopwatch was just a few seconds shorter or longer it would have made my calculation differ by hundreds or thousands of kilometers. My innacurate timing of the sunset was likely one error, with the degree of precision required being a large hurdle. Because it can only be done once, it would likely take a few weeks to get enough measurements to average into something respectable, or an extremely precise system for measuring when the sun dissapears from view (maybe using lasers?). Another error was the timing of the swingset, and our inconsistent height of release, leading to an incorrect gravitational constant. This could be rectified also by attempting to average many attempts or finding a more consistent system. Perhaps a ball and chain, released by an automatic timer at a specific height? The ball and chain would also solve another source of error, which was the swing's wierd construction.  
+  
 </p>
 
 <h2>Conclusion:</h2>
