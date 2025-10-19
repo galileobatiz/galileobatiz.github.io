@@ -1,1 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.w3-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+}
+.w3-bar-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+.w3-card {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-right {
+    display: flex; 
+}
+.w3-hide-small {
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 90px auto 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Speed of Light Lab</h1>
+<p style="text-align: center;"><em>Galileo, Ananya, Tori, Yona — 10-19-25</em></p>
+<p style="text-align: center;">(graphics are a work in progress)</p>
+
+<h2>Introduction:</h2>
+<p>
+In this lab we used our newfound knowledge about waves, specifically light waves in order to find the speed of light using patterns of microwaves from a microwave. Our hypothesis was that the speed of light should be around 3 * 10^10 m/s, a widely accepted number. 
+  
+</p>
+
+<h2>Formulas Used:</h2>
+<p>
+    Speed of light = 2 x (distance between melted spots) x (frequency of microwave)
+</p>
+<p>
+  Error = |correct-yours|/correct * 100%
+</p>
+
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Microwave </li>
+ <li>Microwave safe dish at least 5-6 inches across (bigger is better) </li>
+ <li>Mini-marshmallows </li>
+ <li>Chocolate Chips</li>
+ <li>Graham crackers</li>
+ <li>Ruler </li>
+ <li>Calculator </li>
+
+</ul>
+
+    <h2>Procedure:</h2>
+    <ol class="a">
+        <li><b>Marshmallow & Chocolate Chip Trial:</b>
+            <ul>
+                <li>If your microwave has a rotating platform, remove it.</li>
+                <li>Create a single, even layer of mini-marshmallows on a large, microwave-safe plate.</li>
+                <li>Microwave the plate for about 10 seconds. Adjust the time if needed; you want some marshmallows to be melted while others are not.</li>
+                <li>Carefully remove the plate. Using a ruler, measure the distance in centimeters between the centers of two adjacent melted spots. This distance is equal to half the wavelength of the microwaves.</li>
+                <li>To verify your results, repeat the entire procedure above using a layer of chocolate chips instead of marshmallows.</li>
+            </ul>
+        </li>
+        <li><b>Calculations:</b>
+            <ul>
+                <li>Find the operating frequency (ƒ) of your microwave. This is usually printed on a sticker on the back or inside the door of the microwave, typically around 2450 MHz. Remember that 1 MHz = 10<sup>6</sup> Hz.</li>
+                <li>Calculate the speed of light (c) using your measurements with the following formula, where <em>d</em> is the distance between melted spots:
+                    <br>
+                    <code>Speed of light (c) = 2 × (distance in cm) × (frequency in Hz)</code>
+                </li>
+                <li>Compare your experimental value to the actual speed of light, which is approximately 3.00 × 10<sup>10</sup> cm/s. Calculate your percent error to see how close you were.</li>
+            </ul>
+        </li>
+    </ol>
+
+<h2>Data and Analysis:</h2>
+<h3 style="text-align: center;">Figure 1: Basically everything</h3>
+<figure style="text-align: center;">
+  <img src="/images/lightWaveLab.png" alt="whole lab" width="600" style="border: 1px solid #ccc;">
+  <figcaption style="font-size: 16px; font-style: italic;">Math and everything</figcaption>
+</figure>
+
+<p><b>Data:</b></p>
+<ul class="d">
+  <li>Marshmallow distance: 7 cm</li>
+  <li>Chocolate Distance: 6 cm</li>
+  <li>Microwave frequency: 2450 MHz</li>
+  <li>Error Marshmallow: 14.3%</li>
+  <li>Error Chocolate: 47%</li>
+</ul>
+
+<p><b>Calculations:</b></p>
+<ul class="d">
+  <li><b>Speed of Light (c):</b> <br>
+    <code>(c) = 2 * (7) * (2.45 * 10^9) = 3.43 * 10^10</code>  <br>
+    <code>(c) = 2 * (9) * (2.45 * 10^9) = 4.41 * 10^10</code> </li>
+ <li><b>Error Percentages:</b> <br>
+    <code>Error = |3*10^10-3.43*10^10|/3*10^10 * 100% = 14.3% wrong</code>  <br>
+    <code>Error = |3*10^10-4.41*10^10|/3*10^10 * 100% = 47% wrong</code> </li>
+</ul>
+
+    <h2>Interactive Calculator:</h2>
+    <div class="interactive-calculator">
+        <div class="slider-container">
+            <label for="distanceSlider">Distance (cm): <span id="distanceValue">6.12</span></label>
+            <input type="range" id="distanceSlider" min="1" max="15" value="6.12" step="0.01">
+        </div>
+        <div class="slider-container">
+            <label for="frequencySlider">Microwave Frequency (MHz): <span id="frequencyValue">2450</span></label>
+            <input type="range" id="frequencySlider" min="2400" max="2500" value="2450" step="1">
+        </div>
+        <div class="slider-container">
+            <label for="speedSlider">Speed of Light (c) (&times;10¹⁰ cm/s): <span id="speedValue">3.00</span></label>
+            <input type="range" id="speedSlider" min="1" max="5" value="3.00" step="0.01">
+        </div>
+        <div class="slider-container">
+            <label for="errorSlider">Error Percentage (%): <span id="errorValue">0.00</span></label>
+            <input type="range" id="errorSlider" min="0" max="100" value="0" step="0.01">
+        </div>
+    </div>
+
+<script>
+    const distanceSlider = document.getElementById('distanceSlider');
+    const frequencySlider = document.getElementById('frequencySlider');
+    const speedSlider = document.getElementById('speedSlider');
+    const errorSlider = document.getElementById('errorSlider');
+
+    const distanceValue = document.getElementById('distanceValue');
+    const frequencyValue = document.getElementById('frequencyValue');
+    const speedValue = document.getElementById('speedValue');
+    const errorValue = document.getElementById('errorValue');
+
+    const acceptedSpeedOfLight = 3.00e10; // cm/s
+
+    function updateCalculations(source) {
+        let dist = parseFloat(distanceSlider.value);
+        let freq = parseFloat(frequencySlider.value) * 1e6; // Convert MHz to Hz
+        let speed = parseFloat(speedSlider.value) * 1e10; // Convert slider value to cm/s
+        let error = parseFloat(errorSlider.value);
+
+        if (source === 'distance' || source === 'frequency') {
+            speed = 2 * dist * freq;
+            error = Math.abs((acceptedSpeedOfLight - speed) / acceptedSpeedOfLight) * 100;
+            speedSlider.value = (speed / 1e10).toFixed(2);
+            errorSlider.value = error.toFixed(2);
+        } else if (source === 'speed') {
+            dist = speed / (2 * freq);
+            error = Math.abs((acceptedSpeedOfLight - speed) / acceptedSpeedOfLight) * 100;
+            distanceSlider.value = dist.toFixed(2);
+            errorSlider.value = error.toFixed(2);
+        } else if (source === 'error') {
+            // Assume the user is setting the magnitude of error.
+            // We'll calculate a speed that is higher than the accepted value by the error percentage.
+            speed = acceptedSpeedOfLight * (1 + error / 100);
+            dist = speed / (2 * freq);
+            speedSlider.value = (speed / 1e10).toFixed(2);
+            distanceSlider.value = dist.toFixed(2);
+        }
+
+        // Update display values
+        distanceValue.textContent = parseFloat(distanceSlider.value).toFixed(2);
+        frequencyValue.textContent = parseFloat(frequencySlider.value).toFixed(0);
+        speedValue.textContent = parseFloat(speedSlider.value).toFixed(2);
+        errorValue.textContent = parseFloat(errorSlider.value).toFixed(2);
+    }
+
+    // Add event listeners
+    distanceSlider.addEventListener('input', () => updateCalculations('distance'));
+    frequencySlider.addEventListener('input', () => updateCalculations('frequency'));
+    speedSlider.addEventListener('input', () => updateCalculations('speed'));
+    errorSlider.addEventListener('input', () => updateCalculations('error'));
+
+    // Initial call to set values correctly based on default slider positions
+    updateCalculations('distance');
+</script>
+  
+
+<h2>Error Analysis:</h2>
+<p>  
+ Our errors, while seemingly small looking at the numbers, were considerable, with around 50% error for one of our trials. The reason for this was likely the uncertain nature of our measurements, for instead of a precise singular point as a node, we had a big spot of meltiness, with little idea where to measure from. This could be fixed with a much, much larger microwave and a bigger surface area, that way we could measure across multiple nodes rather than just one. Another error could simply be the inconsistency of the ingredients themselves. It wasn't completely clear when the chocolate was melted, so a special material that could be placed as a single sheet, and then perhaps imaged with infrared after being microwaved would give us a better idea of exactly where the material is being heated up. 
+</p>
+
+<h2>Conclusion:</h2>
+<p>
+Although the measurements did have error, they succeeded in giving a ballpark measurement of the speed of light. This is extremely useful to help increase the understanding of our universe, as light is literally the speed limit around which time and even space are defined. A real world application could be calculating communication delay between radio stations, or calculating and triangulating distances of radio stations given communication delays.
+</p>
+
+<h2>Sources:</h2>
+<ul class="d">
+  <li>Lab Guidelines and Rubric</li>
+  <li>In-class help</li>
+  <li>Google Gemini fully made the calculator, and I tried to get it to make the list but that wasnt helpful. You'll notice my list is different from the one it gives me. https://gemini.google.com/share/98481d5f2b8e >
+</ul>
+</div>
+
+<footer>
+  <p>© 2025 Physics By Gali. Lab created by Galileo, Ananya, Tori, and Yona.</p>
+</footer>
+
+</body>
+</html>
 
