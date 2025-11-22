@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.w3-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+}
+.w3-bar-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+.w3-card {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-right {
+    display: flex; 
+}
+.w3-hide-small {
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 90px auto 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Spectroscopy and Spectral Structures</h1>
+<p style="text-align: center;"><em>Gali, Yona, Tori, Ananya — November 21, 2025</em></p>
+
+<h2>Introduction:</h2>
+<p>
+In this lab we used spectrometers to look at the light emissions of different gases when ionized. We did not use any formulas, but attempted to record the spectral signature of each gas, and then match it to a commonly accepted reading for a real gas. 
+</p>
+<p>
+My hypothesis after an estimation was the following lineup:
+</p>
+<ol>
+    <li>Oxygen</li>
+    <li>Hydrogen</li>
+    <li>Air</li>
+    <li>CO<sub>2</sub></li>
+    <li>Neon</li>
+    <li>Krypton</li>
+    <li>Nitrogen</li>
+</ol>
+
+<h2>Materials:</h2>
+<ul class="d">
+    <li>Gas tubes:
+        <ul>
+            <li>Hydrogen</li>
+            <li>Neon</li>
+            <li>Carbon Dioxide</li>
+            <li>Krypton</li>
+            <li>Air/Water Vapor</li>
+            <li>Oxygen</li>
+            <li>Nitrogen</li>
+        </ul>
+    </li>
+    <li>Spectrum tube power supply</li>
+    <li>Spectroscopes</li>
+    <li>Colored pencils, paper</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+    <li>Each group will take a turn observing a single illuminated tube of gas through their spectroscopes.</li>
+    <li>Each member of each group will then sketch the spectrum of the gas they have observed, noting where there are emission and absorption lines, and approximately where (use the scale provided inside the spectroscope, as well as the colors!).</li>
+    <li>Repeat steps 1-2 for each tube of gas.</li>
+    <li>Each group will finally work together to identify the gases in the tubes, given their sketches of the spectral signatures of each gas.</li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+<p>
+Below is the handwritten log of the spectra observed for each of the 7 unknown tubes.
+</p>
+
+<img src="spectroscopyLab.jpg" alt="Hand drawn spectra log">
+
+<p>
+We compared the observed spectra to our initial guesses. The actual identities of the gases were revealed to be in the order: O<sub>2</sub>, CO<sub>2</sub>, Air, Kr, Ne, N<sub>2</sub>, H<sub>2</sub>.
+</p>
+
+<table>
+  <tr>
+    <th>Sample #</th>
+    <th>My Hypothesis</th>
+    <th>Actual Gas</th>
+    <th>Result</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Oxygen</td>
+    <td>Oxygen</td>
+    <td><strong>Correct</strong></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Hydrogen</td>
+    <td>CO<sub>2</sub></td>
+    <td>Incorrect</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Air</td>
+    <td>Air</td>
+    <td><strong>Correct</strong></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>CO<sub>2</sub></td>
+    <td>Krypton</td>
+    <td>Incorrect</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Neon</td>
+    <td>Neon</td>
+    <td><strong>Correct</strong></td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>Krypton</td>
+    <td>Nitrogen</td>
+    <td>Incorrect</td>
+  </tr>
+  <tr>
+    <td>7</td>
+    <td>Nitrogen</td>
+    <td>Hydrogen</td>
+    <td>Incorrect</td>
+  </tr>
+</table>
+
+<h2>Error Analysis:</h2>
+<p>
+Based off my drawings, I was able to guess 3/7 of the gases correctly, giving me a 67.2% error.
+</p>
+<p>
+The vast majority of the error was likely due to limitations of the small spectrometer. In order to even get a reading you have to position it very precisely, and to go back and forth between looking through it and marking down your drawing on the page, and then finding a spot where you can see the spectra again is very inconsistent. A simple fix could be just fixing the spectrometer to a tripod or elevated surface so that the unsteadiness of holding it by hand is mitigated. The problem of looking back and forth between the page and spectrometer could be mitigated with a differently designed apparatus, where instead of the differentiated spectral lines being mirrored towards the little numbered bar they are projected outwards towards the wall or downwards towards the table, where we could simply mark the lines over the projected light.
+</p>
+
+<h2>Conclusion:</h2>
+<p>
+Although our accuracy wasn't super high, the ability to use information about light to figure out which element produces it is basically the only way we can figure out what anything we can't touch is made of, and it has cool application like figuring out what the sky is made of, and the sun, and atmospheres of other planets, which could be inhabited. Perhaps we could even examine the metallicity of distant quasar formations in order to gain insight into how the black hole at their center formed.
+</p>
+
+</div>
+
+<footer>
+  <p>© 2025 Physics By Gali. Lab content provided by the students.</p>
+</footer>
+
+</body>
+</html>
