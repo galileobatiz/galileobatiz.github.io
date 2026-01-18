@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali - Age of the Universe</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="#home" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'tidesLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' },
+    { text: "Age of Universe Lab", href: 'hubbleLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Age of the Universe Lab</h1>
+<p style="text-align: center;"><em>Gali — 1-13-26</em></p>
+<p style="text-align: center;">its giving cosmology)</p>
+
+<h2>Introduction:</h2>
+<p>In this lab, we utilized real astronomical data to determine the rate of the universe's expansion, known as the Hubble Constant. By using calculated redshifts from spectrographic readings of galaxies' hydrogen and calcium content and their angular sizes as given by a website from U Washington, we were able to calculate their velocities and distances. We used this data to estimate the age of the universe. I hypothesize from my previous knowledge that the universe is 13.5 billion years old.</p>
+
+<h3>Hubble's Law:</h3>
+<p>
+The velocity of a galaxy away from us is proportional to its distance from us. This relationship is defined by the equation <i>v = H<sub>o</sub> &times; d</i>.
+</p>
+
+<h3>Formulas Used:</h3>
+<pre>
+v = c * z  (Velocity = Speed of Light * Redshift)
+d = 22 kpc / angular_size (Distance assuming galaxy to by 22kpc)
+v = H_0 * d (Hubble's Law)
+Max Age = 1 / H_0
+</pre>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Database of galaxy images and spectra</li>
+  <li>Digital formula for measuring galaxy angles</li>
+ <li>Digital application for managing data and forming lines of best fit</li>
+  <li>Computer</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li>
+    Selection
+    <ol>
+      <li>Use computer to open your database of galaxies and spectra, such as the Palmora Observatories readings in Washington University's website.
+      <li> From the 27 galaxy images and spectra, select only spiral galaxies with clear shapes and strong spectral lines whose wavelength can be determined</li>
+    </ol>
+  </li>
+  <li>
+    Measurements
+    <ol>
+      <li><strong>Velocity:</strong> Find the redshift of the Calcium K and H lines and the Hydrogen-alpha lines by comparing the spectral lines of the regular elements with the recorded ones from distant galaxies, then calculate the velocity of those galaxies using the doppler formula <i>v = c &times; z</i>.</li>
+      <li><strong>Distance:</strong> Using your digital formula, measure the angular diameter of the galaxies in milliradians. Assuming a "standard ruler" where all these spirals are approx 22 kpc across, calculate the distance based off of that angle using basic trigonometry</li>
+    </ol>
+  </li>
+  <li>
+    Analysis
+    <ol>
+      <li>In your application for managin data plot Velocity (y-axis) vs. Distance (x-axis).</li>
+      <li>The slope of the best-fit line gives the Hubble Constant (H<sub>o</sub>).</li>
+      <li>We used H<sub>o</sub> to calculate the age of the universe.</li>
+    </ol>
+  </li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+
+<p>Below is the data for the galaxies measured in my final dataset</p>
+<div style="overflow-x: auto;">
+<table>
+  <tr>
+    <th>Galaxy</th>
+    <th>Type</th>
+    <th>Spectra</th>
+    <th>Keep</th>
+    <th>Angular Size (mrad)</th>
+    <th>Ca K (3933.7)</th>
+    <th>Ca H (3968.5)</th>
+    <th>Hα (6562.8)</th>
+    <th>Ca K Redshift</th>
+    <th>Ca H Redshift</th>
+    <th>Hα Redshift</th>
+    <th>Avg Redshift</th>
+    <th>Velocity (km/s)</th>
+    <th>Distance (Mpc)</th>
+    <th>Size (kpc)</th>
+  </tr>
+  <tr>
+    <td>NGC 1357</td>
+    <td>clear spiral</td>
+    <td>Clear calcium and hydrogen spectra</td>
+    <td>yes</td>
+    <td>1.003</td>
+    <td>3963.7</td>
+    <td>4000.0</td>
+    <td>6608.2</td>
+    <td>0.007626</td>
+    <td>0.007937</td>
+    <td>0.006917</td>
+    <td>0.007493</td>
+    <td>2248.17</td>
+    <td>21.93</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 1832</td>
+    <td>clear spiral</td>
+    <td>very scrumptious hydrogen and ok calcium spectra</td>
+    <td>yes</td>
+    <td>0.818</td>
+    <td>3961.4</td>
+    <td>3997.0</td>
+    <td>6607.5</td>
+    <td>0.007041</td>
+    <td>0.007181</td>
+    <td>0.006811</td>
+    <td>0.007011</td>
+    <td>2103.44</td>
+    <td>26.89</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 2276</td>
+    <td>weird spiral</td>
+    <td>^^^</td>
+    <td>yes</td>
+    <td>0.749</td>
+    <td>3967.6</td>
+    <td>3997.8</td>
+    <td>6616.8</td>
+    <td>0.008617</td>
+    <td>0.007383</td>
+    <td>0.008228</td>
+    <td>0.008076</td>
+    <td>2422.92</td>
+    <td>29.37</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 2775</td>
+    <td>like blurry spiral</td>
+    <td>good calcium and bad hydrogen</td>
+    <td>probably not</td>
+    <td>0.888</td>
+    <td>3955.2</td>
+    <td>3983.3</td>
+    <td>6952.0</td>
+    <td>0.005465</td>
+    <td>0.003729</td>
+    <td>0.059303</td>
+    <td>0.022832</td>
+    <td>6849.89</td>
+    <td>24.77</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 2903</td>
+    <td>really scrumptious spiral</td>
+    <td>good calcium and bad hydrogen</td>
+    <td>yes</td>
+    <td>3.614</td>
+    <td>3940.5</td>
+    <td>3973.0</td>
+    <td>6574.9</td>
+    <td>0.001728</td>
+    <td>0.001133</td>
+    <td>0.001843</td>
+    <td>0.001568</td>
+    <td>470.63</td>
+    <td>6.09</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3034</td>
+    <td>lowk a spiral but sideways</td>
+    <td>good calcium and hydrogen</td>
+    <td>prolly not</td>
+    <td>2.909</td>
+    <td>3936.6</td>
+    <td>3973.8</td>
+    <td>6563.3</td>
+    <td>0.000737</td>
+    <td>0.001335</td>
+    <td>0.000076</td>
+    <td>0.000716</td>
+    <td>214.89</td>
+    <td>7.56</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3147</td>
+    <td>its spiral but</td>
+    <td>very mid calcium and hydrogen</td>
+    <td>yes</td>
+    <td>1.038</td>
+    <td>3968.4</td>
+    <td>4003.2</td>
+    <td>6620.6</td>
+    <td>0.008821</td>
+    <td>0.008743</td>
+    <td>0.008807</td>
+    <td>0.008790</td>
+    <td>2637.23</td>
+    <td>21.19</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3227</td>
+    <td>its spiral but theres another one</td>
+    <td>very mid calcium and hydrogen</td>
+    <td>yeah</td>
+    <td>1.323</td>
+    <td>3949.8</td>
+    <td>3986.2</td>
+    <td>6608.2</td>
+    <td>0.004092</td>
+    <td>0.004460</td>
+    <td>0.006917</td>
+    <td>0.005156</td>
+    <td>1547.07</td>
+    <td>16.63</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3245</td>
+    <td>just a oval shape</td>
+    <td>mid calcium good hydrogen</td>
+    <td>no</td>
+    <td>0.669</td>
+    <td>3950.5</td>
+    <td>3985.4</td>
+    <td>6612.9</td>
+    <td>0.004270</td>
+    <td>0.004258</td>
+    <td>0.007633</td>
+    <td>0.005387</td>
+    <td>1616.32</td>
+    <td>32.88</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3310</td>
+    <td>it has like one arm and the rest is splotchy</td>
+    <td>bad calcium and great hydrogen</td>
+    <td>prolly nah</td>
+    <td>0.835</td>
+    <td>3978.4</td>
+    <td>3990.0</td>
+    <td>6580.4</td>
+    <td>0.011363</td>
+    <td>0.005417</td>
+    <td>0.002681</td>
+    <td>0.006487</td>
+    <td>1946.28</td>
+    <td>26.35</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3368</td>
+    <td>actually a very like robust spiral</td>
+    <td>good calcium and mid hydrogen</td>
+    <td>yeah I think so</td>
+    <td>2.133</td>
+    <td>3947.4</td>
+    <td>3981.5</td>
+    <td>6606.7</td>
+    <td>0.003482</td>
+    <td>0.003275</td>
+    <td>0.006689</td>
+    <td>0.004482</td>
+    <td>1344.77</td>
+    <td>10.31</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3471</td>
+    <td>small blurry spiral</td>
+    <td>bad calcium and great hydrogen</td>
+    <td>ok probably</td>
+    <td>0.461</td>
+    <td>3964.5</td>
+    <td>3998.6</td>
+    <td>6611.4</td>
+    <td>0.007829</td>
+    <td>0.007584</td>
+    <td>0.007405</td>
+    <td>0.007606</td>
+    <td>2281.99</td>
+    <td>47.72</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3516</td>
+    <td>small blurry ball</td>
+    <td>bad calcium AND bad hydrogen</td>
+    <td>no</td>
+    <td>0.579</td>
+    <td>3970.7</td>
+    <td>4000.0</td>
+    <td>6614.4</td>
+    <td>0.009405</td>
+    <td>0.007937</td>
+    <td>0.007862</td>
+    <td>0.008401</td>
+    <td>2520.59</td>
+    <td>38.00</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3623</td>
+    <td>slightly indistinct</td>
+    <td>good calcium diabolical hydrogen</td>
+    <td>no</td>
+    <td>2.741</td>
+    <td>3941.2</td>
+    <td>3977.6</td>
+    <td>6612.9</td>
+    <td>0.001906</td>
+    <td>0.002293</td>
+    <td>0.007633</td>
+    <td>0.003944</td>
+    <td>1183.36</td>
+    <td>8.03</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3627</td>
+    <td>very crunchy but sideways</td>
+    <td>very delicious calcium and hydrogen</td>
+    <td>yes</td>
+    <td>2.415</td>
+    <td>3942.0</td>
+    <td>3979.0</td>
+    <td>6578.0</td>
+    <td>0.002109</td>
+    <td>0.002645</td>
+    <td>0.002316</td>
+    <td>0.002357</td>
+    <td>707.19</td>
+    <td>9.11</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 3941</td>
+    <td>blurry dot</td>
+    <td>nice calcium diabolical hydrogen</td>
+    <td>no</td>
+    <td>0.802</td>
+    <td>3946.7</td>
+    <td>3980.0</td>
+    <td>6603.3</td>
+    <td>0.003304</td>
+    <td>0.002897</td>
+    <td>0.006171</td>
+    <td>0.004124</td>
+    <td>1237.37</td>
+    <td>27.43</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 4472</td>
+    <td>very large blurry spot</td>
+    <td>diabolically bad both calcium and hydrogen</td>
+    <td>no</td>
+    <td>1.923</td>
+    <td>3950.5</td>
+    <td>3979.2</td>
+    <td>6612.9</td>
+    <td>0.004270</td>
+    <td>0.002696</td>
+    <td>0.007633</td>
+    <td>0.004866</td>
+    <td>1460.09</td>
+    <td>11.44</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 4631</td>
+    <td>a pancake shape made out of distinct dots</td>
+    <td>really good hydrogen but impossible calcium</td>
+    <td>no</td>
+    <td>4.583</td>
+    <td>3972.2</td>
+    <td>3981.5</td>
+    <td>6578.8</td>
+    <td>0.009787</td>
+    <td>0.003275</td>
+    <td>0.002437</td>
+    <td>0.005167</td>
+    <td>1550.10</td>
+    <td>4.80</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 4775</td>
+    <td>splotchy spiral</td>
+    <td>decent calcium but good hydrogen</td>
+    <td>prolly</td>
+    <td>0.645</td>
+    <td>3958.3</td>
+    <td>3993.9</td>
+    <td>6596.6</td>
+    <td>0.006253</td>
+    <td>0.006400</td>
+    <td>0.005150</td>
+    <td>0.005934</td>
+    <td>1780.43</td>
+    <td>34.11</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 5248</td>
+    <td>less splotchy spiral</td>
+    <td>ok calcium and good hydrogen</td>
+    <td>ok probably</td>
+    <td>1.537</td>
+    <td>3946.7</td>
+    <td>3982.3</td>
+    <td>6586.6</td>
+    <td>0.003304</td>
+    <td>0.003477</td>
+    <td>0.003626</td>
+    <td>0.003469</td>
+    <td>1040.87</td>
+    <td>14.31</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 5548</td>
+    <td>spiral or concentric circles</td>
+    <td>wierdly far away but distinct both</td>
+    <td>yes</td>
+    <td>0.445</td>
+    <td>4003.2</td>
+    <td>4040.4</td>
+    <td>6675.7</td>
+    <td>0.017667</td>
+    <td>0.018117</td>
+    <td>0.017203</td>
+    <td>0.017662</td>
+    <td>5298.85</td>
+    <td>49.44</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 5866</td>
+    <td>indistinct oblate spheroid</td>
+    <td>really bad both</td>
+    <td>no</td>
+    <td>1.709</td>
+    <td>3938.1</td>
+    <td>3973.0</td>
+    <td>6596.6</td>
+    <td>0.001118</td>
+    <td>0.001133</td>
+    <td>0.005150</td>
+    <td>0.002467</td>
+    <td>740.27</td>
+    <td>12.87</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 6181</td>
+    <td>splotchy spiral</td>
+    <td>good for both but more spikes than expected</td>
+    <td>ok probably</td>
+    <td>0.744</td>
+    <td>3967.6</td>
+    <td>4003.2</td>
+    <td>6609.8</td>
+    <td>0.008617</td>
+    <td>0.008743</td>
+    <td>0.007161</td>
+    <td>0.008174</td>
+    <td>2452.33</td>
+    <td>29.57</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 6217</td>
+    <td>spiral with extra unexpected arms</td>
+    <td>good spikes but too many somehow</td>
+    <td>yes I suppose</td>
+    <td>0.647</td>
+    <td>3949.8</td>
+    <td>3988.5</td>
+    <td>6589.6</td>
+    <td>0.004092</td>
+    <td>0.005039</td>
+    <td>0.004083</td>
+    <td>0.004405</td>
+    <td>1321.61</td>
+    <td>34.00</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 6643</td>
+    <td>nice spiral</td>
+    <td>why so many spikes</td>
+    <td>ok probably</td>
+    <td>1.015</td>
+    <td>3953.6</td>
+    <td>3986.2</td>
+    <td>6594.3</td>
+    <td>0.005058</td>
+    <td>0.004460</td>
+    <td>0.004799</td>
+    <td>0.004772</td>
+    <td>1431.88</td>
+    <td>21.67</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 6764</td>
+    <td>indistinct spiral with spots</td>
+    <td>even more spikes, but very clear ones</td>
+    <td>i suppose</td>
+    <td>0.715</td>
+    <td>3962.2</td>
+    <td>4007.9</td>
+    <td>6611.3</td>
+    <td>0.007245</td>
+    <td>0.009928</td>
+    <td>0.007390</td>
+    <td>0.008187</td>
+    <td>2456.34</td>
+    <td>30.77</td>
+    <td>22</td>
+  </tr>
+  <tr>
+    <td>NGC 7469</td>
+    <td>very small dot with perhaps spiral arms</td>
+    <td>many spikes, very shifted</td>
+    <td>why not</td>
+    <td>0.366</td>
+    <td>3996.2</td>
+    <td>4035.0</td>
+    <td>6660.9</td>
+    <td>0.015888</td>
+    <td>0.016756</td>
+    <td>0.014947</td>
+    <td>0.015864</td>
+    <td>4759.32</td>
+    <td>60.11</td>
+    <td>22</td>
+  </tr>
+</table>
+</div>
+  
+<figure style="text-align: center;">
+  <img src="hubbleGraph.jpg" alt="Velocity vs Distance Graph" width="600" style="border: 1px solid #ccc;">
+  <figcaption style="font-size: 16px; font-style: italic;">From this table I graphed the velocity and the distance, and made a line of best fit. The slope of the line represents H<sub>0</sub>.</figcaption>
+</figure>
+
+<h3>Data Analysis:</h3>
+<ul class="d">
+    <li><strong>Hubble Constant as calculated by the slope(H<sub>0</sub>):</strong> 78.55 km/sec/Mpc</li>
+    <li><strong>Maximum Age (1/H<sub>0</sub> corrected for units):</strong> 12448100686 Years</li>
+</ul>
+
+<h2>Questions & Error Analysis:</h2>
+
+  
+<h3>Error Percentage</h3>
+
+<p>
+  The accepted value of Hubble's Constant is <i>70.4 ± 3% = 68.3 to 72.5 km/sec/Mpc, given by Dr. Freedman's team at Uchicago</i>.
+  <br><br>
+  Our measured value of 78.55 falls just outside this strict range. Calculating the specific percent error:
+  <br>
+  <strong>(|78.55 - 70.4| / 70.4) &times; 100 = 11.58%</strong>
+  <br><br>
+</p>p>
+
+<h3>Sources of Error + Measurement Challenges</h3>
+<p>One major challenge was measuring the distance using angles, because the galaxies are fuzzy around the edges, making it difficult to decide where the edge of the galaxy ends and the background begins and take measurements. This introduces uncertainty into our distance variable, on top of the already flawed assumption that every galaxy is exactly 22mpc across. Another notable source of error wwas my calculation for redshift/velocity, due to the subjective and decision based conclusion that many of the spectral graphs forced me to take. This judgement based conclusion is also a large factor in determining my Hubble's constant due to the fact that I selected which galaxies to graph in the first place, which could cause error as well, or even if it reached a more accepted number, would be more due to my decision than the objective data.</p>
+
+<h3>Questions:</h3>
+  
+<h4>Compare the speed of the galaxy with the highest redshift to the speed of light. Identify that galaxy and state its recessional velocity. What fraction of the speed of light is that galaxy receding from us? Comment on your value—that is, in terrestrial terms, is this speed high? How about celestial terms?</h4>
+<p>My fastest Galaxy was NGC 2775 at 6849 km/s, or around 2.2 percent of the speed of light. In terms of values we can understand, it is enormously fast, and would be enough to travel around the whole world in a matter of seconds.</p>
+
+<h4>Why does the best-fit line to your data need to go through the origin of your graph? Where does the "origin" lie in the Universe?</h4>
+<p>Thats because we assume that when there is no distance, there is no velocity. We assume that at earth(or any given point) there is no expansion away from that point.</p>
+  
+<h4>Quantitatively compare your maximum age for the Universe to the age of the Sun (5 billion years), and to the age of the oldest stars in the Milky Way (approx. 15 billion years). Briefly discuss any discrepancies.</h4>
+<p>The sun is about 1/3 of the age of the universe, which makes it quite old, and my calculated age is lower than the age of the oldest stars, meaning I likely have an error in my calculation.</p>
+
+<h4>Write down the formula you used to determine the distances to these galaxies and explain each term. State whether the distance is proportional to or inversely proportional to each term.</h4>
+<p>WWe assumed that at extremely low angles, the distance would be roughly equal to the actual size over the angular size, that means that the lower the angular size, the greater the distance, making them inversely propotional.</p>
+
+<h4>How would an over-estimate or an under-estimate of the actual diameter (not angular diameter) of a galaxy affect your estimate of the distance to it?</h4>
+<p>If 22kpc is greater than the galaxy size, we overestimate the distance, and if 22kpc is smaller than the galaxy size, we underestimate the distance.</p>
+
+<h4>What would be the effect on your value for the Hubble constant of your consistently under-measuring or over-measuring the angular diameter of the galaxies?</h4>
+<p> If we overmeasured the angular diaemeter, it would make the galaxies seem too close, and the hubble constant ould be too high, with an undermeasuring causing the opposite.</p>
+
+<h4>Quantitatively (give some numbers) how precise do you believe your measurements to be for the wavelengths? For the angular sizes? Give one example of something that might affect your precision.</h4>
+<p> For the angular size, my precision was likely + or - up to 20% of the actual size of the galaxy, considering the fuzz often makes up a significant portion of the galaxyh image. For the wavelengths, due to the fact that many of the galaxies I chose had good spectral lines, my precision was likely only 5-10 Angstroms, an error of less than 1%.</p>
+
+<h4>How does peculiar motion (galaxies orbiting in groups/clusters) affect your velocity measurements?</h4>
+<p>For nearby galaxies a difference of only 300km/s could make a significant uncertainty percentage, and scatter of data points near the origin. For distant galaxies this uncertainty goes down significantly, but is still very concerning as up to only 10% or less. </p>
+
+
+  
+<h2>Conclusion:</h2>
+<p>This lab confirmed Hubble's Law: galaxies are receding from us, and the faster they move, the farther away they are. Also, my calculated age of the universe roughly is 10% away from my hypothesis of the widely accepted number, mimicking the error percentage I got for Hubble's constant. This lab may not be useful for a tangible purpose, but figuring out how long the universe has been around gives us more insight into its origins, a mystery plaguing curious human minds for millennia. </p>
+
+<h2>Sources:</h2>
+<ul class="d">
+  <li>Hubble Law Lab Manual</li>
+  <li>Palomar Observatory Sky Survey Washington University</li>
+</ul>
+</div>
+
+<footer>
+  <p>© 2026 Physics By Gali. Lab created by Gali.</p>
+</footer>
+
+</body>
+</html>
+
+```
