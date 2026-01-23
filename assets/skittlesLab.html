@@ -1,8 +1,4 @@
-I can certainly update the lab report with your new data. I've replaced the previous data table with the exact numbers from your spreadsheet image, calculated the new averages, and updated the graph interpretation section to align with these specific results.
 
-Here is the updated HTML code:
-
-```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -144,20 +140,20 @@ footer {
 
 <h1 style="text-align: center;">Simulation of Half-Life Using Skittles</h1>
 <p style="text-align: center;"><em>Gali — 1-22-26</em></p>
-<p style="text-align: center;">its giving radioactive decay)</p>
+<p style="text-align: center;">(its giving radioactive decay)</p>
 
-<h2>Purpose:</h2>
-<p>To simulate the concept of half-life through the transmutation of Carbon-14 (C-14) into Nitrogen-14 (N-14) using candy as a model for randomness and probability.</p>
+<h2>Introduction:</h2>
+<p>In this lab, our goal was to simulate the way elements transmute in a period of time measured by half lives, a probabilistic and measurable phenomenon. We simulated this by using the most obvious and efficient way to make a 50% chance, which is obviously flipping skittles. These skittles are supposed to model the half live of C-14 as it turns into N-14, and I hypothesize that it will take rouphly 8 half lives for this to happen completely. </p>
 
-<h3>Theory:</h3>
+<h3>How it works with the real particles:</h3>
 <p>
-<sup>14</sup><sub>6</sub>C is unstable due to having too many neutrons. One of the neutrons will change into a proton and produce a beta particle. <sup>14</sup><sub>7</sub>N is produced.
+<sup>14</sup><sub>6</sub>C is unstable due to having too many neutrons. One of the neutrons will change into a proton and produce a beta particle, leaving <sup>14</sup><sub>7</sub>N 
 </p>
 <p style="text-align: center; font-weight: bold; font-style: italic;">
 <sup>14</sup><sub>6</sub>C &rarr; <sup>14</sup><sub>7</sub>N + <sup>0</sup><sub>-1</sub>e + v
 </p>
 <p>
-Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 years and change into N-14. In another 5,730 years, another 50% of the remaining atoms will change. The process continues until ALL the C-14 has changed into N-14.
+According to common agreement, in 5,730 years each C-14 will have a 50% chance to change into N-14, leaving around half remaining. In another 5,730 years, another 50% of the remaining atoms will change, and it keeps going until all the C-14 has changed into N-14.
 </p>
 
 <h2>Materials:</h2>
@@ -173,7 +169,7 @@ Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 ye
   <li>
     <strong>Setup</strong>
     <ol>
-      <li>Obtain a cup for the skittles. We started with approximately 60 Skittles to ensure better statistical results.</li>
+      <li>Obtain a cup full of the skittles. We started with approximately 60 Skittles.</li>
       <li>Your total number of skittles represents 0 half-lives (Time = 0), with 100% of the radioactive particles present.</li>
       <li>C-14 atoms are represented by the "S" side (Heads). N-14 atoms are the blank side (Tails).</li>
     </ol>
@@ -185,7 +181,7 @@ Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 ye
       <li>Count and record the number of C-14 that remain (Heads). These are still radioactive.</li>
       <li>The Tails are the N-14 atoms created (decayed). Remove them from the population.</li>
       <li>Collect all the remaining C-14 (Heads) and place them back in the cup.</li>
-      <li>Repeat this "shake and pour" process until all the C-14 has decayed into N-14.</li>
+      <li>Repeat this process until all the C-14 has decayed into N-14.</li>
     </ol>
   </li>
   <li>
@@ -200,7 +196,7 @@ Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 ye
 
 <h2>Data and Analysis:</h2>
 
-<p>Below is the data collected from our two trials.</p>
+<p>Here is the data we collected.</p>
 <div style="overflow-x: auto;">
 <table>
   <thead>
@@ -292,74 +288,71 @@ Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 ye
 
 <figure style="text-align: center;">
   <img src="images/skittleGraph.png" alt="Percentage Remaining vs Half Lives Graph" width="600" style="border: 1px solid #ccc; background-color: #eee; min-height: 300px;">
-  <figcaption style="font-size: 16px; font-style: italic;">Graph generated in Excel showing the exponential decay of our Skittles "atoms" over time.</figcaption>
+  <figcaption style="font-size: 16px; font-style: italic;">Graph in Excel to find the line of best fit for our exponential decay of our Skittles over time.</figcaption>
 </figure>
 
 <h3>Graph Interpretation:</h3>
-<p>Using the line of best fit from our average graph, we determined the following:</p>
+<p>Using the line of best fit from our average graph, we determined:</p>
 <ul class="d">
-    <li><strong>Years until C-14 is only 3% radioactive:</strong> ~35,065 years (Consistent with data between HL 6 and HL 7)</li>
-    <li><strong>Radioactive C-14 left after 0.5 Half Lives:</strong> ~45 atoms (interpolated)</li>
-    <li><strong>C-14 remaining after 1.5 Half Lives:</strong> ~27 atoms (interpolated between HL 1 and HL 2)</li>
+    <li><strong>Years until C-14 is only 3% radioactive:</strong> ~35,065 years </li>
+    <li><strong>Radioactive C-14 left after 0.5 Half Lives:</strong> ~45 atoms</li>
+    <li><strong>C-14 remaining after 1.5 Half Lives:</strong> ~27 atoms(based on the graph!)</li>
     <li><strong>Years until 90% of atoms are radioactive (10% decayed):</strong> ~1,053.6 years</li>
-    <li><strong>Age of a sample with 2 atoms remaining:</strong> ~34,380 years (Matches our HL 6 data exactly)</li>
+    <li><strong>Age of a sample with 2 atoms remaining:</strong> ~34,380 years(again based on the graph!)</li>
 </ul>
 
 <h2>Post Lab Questions & Discussion:</h2>
 
-<h3>C-14 Dating Mathematics</h3>
-<p><strong>Q: C-14 is used to date objects from the last 50,000 years. How many half-lives of C-14 take place in 50,000 years?</strong></p>
+<h3>C-14 Dating</h3>
+<p><strong>C-14 is used to date objects from the last 50,000 years. How many half-lives of C-14 take place in 50,000 years?</strong></p>
 <p>
   To find this, we divide the total time by the half-life of Carbon-14.
   <br>
   <em>50,000 years / 5,730 years = 8.72 Half-Lives</em>
   <br>
-  (Note: In class we discussed the natural log formula relating to the decay constant where 6931.47 relates to mean lifetime calculations, but the raw half-life count is approx 8.7).
-</p>
-
-<h3>Decay Products</h3>
-<p><strong>Q: C-14 dating is based on the nuclear decay of C-14. During C-14 decay, explain what is produced?</strong></p>
-<p>When C-14 decays, it turns into Nitrogen-14 (N-14). In this process, a neutron turns into a proton, ejecting an electron (beta particle) and an antineutrino.</p>
-
-<h3>Limitations of Carbon Dating</h3>
-<p><strong>Q: Why is C-14 dating not used to date substances which are 12 years old or substances 1,000,000 yrs old?</strong></p>
-<p>Because dating relies on probability and measuring the <em>change</em> in ratio. For something only 12 years old, not enough C-14 has decayed to be measurably different from a modern sample. Conversely, for something 1,000,000 years old (which is nearly 175 half-lives), there is effectively zero C-14 left to measure. You would need an isotope with a much longer half-life, like Uranium-238.</p>
-
-<h3>Radio Tracers & Safety</h3>
-<p><strong>Q: Why is it safe to take radio tracers?</strong></p>
-<p>Radio tracers used in medicine utilize isotopes with very short half-lives. This means they release their radiation quickly and then stabilize into non-dangerous isotopes. Because the half-life is short, the total time your body is exposed to the radiation is minimal, and the dosage is kept very low.</p>
-
-<h3>Waste Disposal</h3>
-<p><strong>Q: "Low Level Radioactive Waste" (medical) vs "High-level Waste" (fission products). Why bury high-level waste deep underground?</strong></p>
-<p>
-  Low-level waste (like from hospitals) decays quickly and is safe in shallow landfills. High-level waste, however, remains radioactive and generates heat for thousands or millions of years. We bury it deep underground for two main reasons:
-  <br><br>
-  1. <strong>Physical Isolation:</strong> It prevents humans or animals from accidentally interacting with it for geological timeframes.
+   To find it based on our own numbers, we divide the total time by the half-life of Carbon-14 we measured by our trendline(albeit flawed).
   <br>
-  2. <strong>Shielding:</strong> Radiation is a physical process. While air is a poor shield, hundreds of meters of dense rock and soil are excellent at blocking radiation. The Earth's crust naturally contains radioactive elements, so deep burial utilizes the Earth's natural shielding properties to protect the surface biosphere.
+  <em>50,000 years / 6,931 years = 7.2 Half-Lives</em>
+  <br>
 </p>
 
-<h3>The "Element Z" Problem</h3>
-<p><strong>Problem:</strong> Element Z occurs as Z-10 (99%) and Z-11 (1%). Z-11 is radioactive with a half-life of 100 years. If a sample has 12,000 total Z atoms and only 3 Z-11 atoms remain, how old is it?</p>
-<p><strong>Solution:</strong></p>
-<ul class="d">
-  <li>First, determine the original number of Z-11 atoms. If the sample has 12,000 atoms total, and 1% is normally Z-11, then: <em>12,000 &times; 0.01 = 120 original Z-11 atoms.</em></li>
-  <li>We started with 120 atoms and ended with 3.</li>
-  <li>Using the percentage remaining formula (or simply counting halves):
-    <ul>
-      <li>120 &rarr; 60 (1 HL)</li>
-      <li>60 &rarr; 30 (2 HL)</li>
-      <li>30 &rarr; 15 (3 HL)</li>
-      <li>15 &rarr; 7.5 (4 HL)</li>
-      <li>7.5 &rarr; 3.75 (5 HL)</li>
-    </ul>
-  </li>
-  <li>3 remaining atoms is roughly 5.3 half-lives.</li>
-  <li>Age = 5.3 half-lives &times; 100 years/half-life = <strong>~530 Years Old</strong>.</li>
-</ul>
+<h3>Decay</h3>
+<p><strong>C-14 dating is based on the nuclear decay of C-14. During C-14 decay, explain what is produced?</strong></p>
+<p>When C-14 decays, it turns into Nitrogen-14 (N-14). To make this happen, a neutron turns into a proton, ejecting a beta particle and a anti electron neutrino(to balance out the lepton count).</p>
+
+<p><strong>Why is C-14 dating not used to date substances which are 12 years old or substances 1,000,000 yrs old?</strong></p>
+<p> Because during those periods of times, you will not have a significant enough change in percentage/ratio by probability to certainly give a figure. In 12 years barely any C-14 will change, so you don’t get any results, and in 1000000 years too much decays leaving nothing to really measure.</p>
+
+<h3>Radio Tracers </h3>
+<p><strong> Why is it safe to take radio tracers?</strong></p>
+<p>Radio tracers have, as you say in the next question, small amounts of radioactivity with short half lives, meaning that they end up releasing very little dangerous radiation for a short period of time, and quickly become not dangerous for your body at all.</p>
+
+<p><strong> “Low Level Radioactive Waste” is generated from hospitals using radiotracers. It contains small amounts of radioactivity with short half lives. Usually it is buried in shallow landfill sites. Why is this a safe process?</strong></p>
+<p> Similarly to why they are not dangerous in your body, these radiotracers quickly stabilize into non-radioactive isotopes without releasing too much dangerous radiation, making those landfills very safe.
+</p>
+
+  
+<h3>Waste</h3>
+<p><strong> “High-level Waste” contains the highly-radioactive fission products with long-lived radioactivity. It generates a considerable amount of heat and radiation and is disposed of deep underground.  Why bury the radioactive waste underground.  In your answer, mention the effect of soil on shielding and the half life of the material. 
+</strong></p>
+<p> This high level waste is much, much more dangerous because it can sometimes be releasing heat and radioactivity for millions or billions of years, so by burying it safely underground you solve two problems. First, the waste is physically as inaccessible as possible, preventing somebody from accidentally going up to it, or it leeching into the ground, or any physical interaction until the millions of years pass(which, in underground geology time is not that much). Secondly, radiation is a physical process that in a vacuum may reach very far, and while air does very little to stop it, earth does significantly better. As a matter of fact, the core and mantle of the earth rely on heat from decaying elements to stay nice and molten, and very little to none of that radiation reaches us on the crust. 
+  </p>
+
+<h3>Element Z</h3>
+<p><strong>Here’s how ½ life dating works.  For example, make believe element Z occurs as  Z-10 (99% of the time) and Z-11 (1%).  That means for every 99, Z-10’s, there is 1, Z-11.  Let’s say that Z-11 is radioactive, and has a half life of 100 yrs.  That means that every 100 yrs, a Z-11 changes into another element.  If there is a sample of 12,000 Z’s, and only 3, Z-11’s remain, how many half lives & years old must the sample be</strong></p>
+<p> Well, because there are 12,000 Z’s, and we know how often that Z is Z-11(1%), we can estimate that most probably in that sample there should be 120 Z-11’s naturally occurring. Because there are 3(and knowing that 3 is 2.5% of 120), we can say(using the equation 100*½^x=percentage remaining), that 5.3 half lives occurred. Multiplying this by 100 years per half life we can say the sample must be around 520 years old. 
+</p>
+  
+<h3>Error Analysis</h3>
+<p>
+  While the Skittles generally followed the expected decay pattern, there were sources of error: First, we went with only 60 Skittles, a number low enough that a few lucky Skittles can skew the graph. With larger sample sizes (like 1,000+) we could make smoother curves that align closer with the theoretical 50/50 probability. Second, some skittles are liekely unevenly weighted, such that the final probability isn't even 50/50, but completely sqewed. Laslty, there's probably some error in our picking of the skittles due to the occasional indistinguishability of the S logo, introducing judgement calls into our decision, which is not probabilistic. Assuming we have free will, anyways.
+</p>
 
 <h2>Conclusion:</h2>
-<p>This lab successfully demonstrated the random yet predictable nature of radioactive decay. While we cannot predict which specific Skittle will "decay" when we pour the cup, we can predict the behavior of the group as a whole. The curve generated by our candy data closely matched the theoretical exponential decay curve of real radioactive isotopes. This modeling helps us understand how we can use these ratios to date ancient artifacts or ensure the safety of medical procedures.</p>
+<p> In conclusion, my hypothesis somehow ended up being exactly right. This is likely due to a well placed educated guess, but the fact that real math suggests this also makes half lives an extremely useful tool for measuring the age of objects anywhere in the universe, from carbon dating manuscripts here on earth to dating comments usining aluminium. The way that the random probabilites add up into measurable outcomes is also a good way for us to begin to conceptualize how atoms generally behave. 
+
+  
+</p>
 
 </div>
 
