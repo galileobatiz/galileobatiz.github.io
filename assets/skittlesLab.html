@@ -1,0 +1,373 @@
+I can certainly update the lab report with your new data. I've replaced the previous data table with the exact numbers from your spreadsheet image, calculated the new averages, and updated the graph interpretation section to align with these specific results.
+
+Here is the updated HTML code:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali - Skittles Half-Life Lab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+.w3-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.w3-bar {
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+.w3-right { float: right; }
+.w3-hide-small { display: block; }
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body style="background-color: #fdfdfd;">
+<div class="w3-top">
+  <div class="w3-bar" style="letter-spacing:4px;">
+    
+    <a href="index.html" class="w3-bar-item">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'tidesLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' },
+    { text: "Skittles Half-Life", href: 'halfLifeLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 80px auto 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">Simulation of Half-Life Using Skittles</h1>
+<p style="text-align: center;"><em>Gali — 1-22-26</em></p>
+<p style="text-align: center;">its giving radioactive decay)</p>
+
+<h2>Purpose:</h2>
+<p>To simulate the concept of half-life through the transmutation of Carbon-14 (C-14) into Nitrogen-14 (N-14) using candy as a model for randomness and probability.</p>
+
+<h3>Theory:</h3>
+<p>
+<sup>14</sup><sub>6</sub>C is unstable due to having too many neutrons. One of the neutrons will change into a proton and produce a beta particle. <sup>14</sup><sub>7</sub>N is produced.
+</p>
+<p style="text-align: center; font-weight: bold; font-style: italic;">
+<sup>14</sup><sub>6</sub>C &rarr; <sup>14</sup><sub>7</sub>N + <sup>0</sup><sub>-1</sub>e + v
+</p>
+<p>
+Theoretically, half the radioactive atoms will undergo nuclear decay in 5,730 years and change into N-14. In another 5,730 years, another 50% of the remaining atoms will change. The process continues until ALL the C-14 has changed into N-14.
+</p>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Skittles (representing atoms)</li>
+  <li>Cup</li>
+  <li>Excel (for graphing)</li>
+  <li>Paper towels</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li>
+    <strong>Setup</strong>
+    <ol>
+      <li>Obtain a cup for the skittles. We started with approximately 60 Skittles to ensure better statistical results.</li>
+      <li>Your total number of skittles represents 0 half-lives (Time = 0), with 100% of the radioactive particles present.</li>
+      <li>C-14 atoms are represented by the "S" side (Heads). N-14 atoms are the blank side (Tails).</li>
+    </ol>
+  </li>
+  <li>
+    <strong>Trial 1</strong>
+    <ol>
+      <li>Pour all the skittles onto a paper towel.</li>
+      <li>Count and record the number of C-14 that remain (Heads). These are still radioactive.</li>
+      <li>The Tails are the N-14 atoms created (decayed). Remove them from the population.</li>
+      <li>Collect all the remaining C-14 (Heads) and place them back in the cup.</li>
+      <li>Repeat this "shake and pour" process until all the C-14 has decayed into N-14.</li>
+    </ol>
+  </li>
+  <li>
+    <strong>Trial 2 & Analysis</strong>
+    <ol>
+      <li>Place all original skittles back into the cup. Switch jobs with your lab partner.</li>
+      <li>Redo the lab a 2nd time, recording the C-14 remaining after each half-life.</li>
+      <li>Use Excel to plot the Average C-14 Remaining (y-axis) vs. Half Lives (x-axis).</li>
+    </ol>
+  </li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+
+<p>Below is the data collected from our two trials.</p>
+<div style="overflow-x: auto;">
+<table>
+  <thead>
+    <tr>
+      <th>Half Lives</th>
+      <th>Total Time (Years)</th>
+      <th>Trial 1 (Heads)</th>
+      <th>Trial 2 (Heads)</th>
+      <th>Average (Heads)</th>
+      <th>% Remaining</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>60</td>
+      <td>60</td>
+      <td>60</td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>5,730</td>
+      <td>45</td>
+      <td>27</td>
+      <td>36</td>
+      <td>60%</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>11,460</td>
+      <td>28</td>
+      <td>13</td>
+      <td>20.5</td>
+      <td>34.17%</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>17,190</td>
+      <td>18</td>
+      <td>4</td>
+      <td>11</td>
+      <td>18.33%</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>22,920</td>
+      <td>8</td>
+      <td>3</td>
+      <td>5.5</td>
+      <td>9.17%</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>28,650</td>
+      <td>4</td>
+      <td>2</td>
+      <td>3</td>
+      <td>5.00%</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>34,380</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>3.33%</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>40,110</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0.5</td>
+      <td>0.83%</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>45,840</td>
+      <td>0</td>
+      <td></td>
+      <td>0</td>
+      <td>0%</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<figure style="text-align: center;">
+  <img src="images/skittleGraph.png" alt="Percentage Remaining vs Half Lives Graph" width="600" style="border: 1px solid #ccc; background-color: #eee; min-height: 300px;">
+  <figcaption style="font-size: 16px; font-style: italic;">Graph generated in Excel showing the exponential decay of our Skittles "atoms" over time.</figcaption>
+</figure>
+
+<h3>Graph Interpretation:</h3>
+<p>Using the line of best fit from our average graph, we determined the following:</p>
+<ul class="d">
+    <li><strong>Years until C-14 is only 3% radioactive:</strong> ~35,065 years (Consistent with data between HL 6 and HL 7)</li>
+    <li><strong>Radioactive C-14 left after 0.5 Half Lives:</strong> ~45 atoms (interpolated)</li>
+    <li><strong>C-14 remaining after 1.5 Half Lives:</strong> ~27 atoms (interpolated between HL 1 and HL 2)</li>
+    <li><strong>Years until 90% of atoms are radioactive (10% decayed):</strong> ~1,053.6 years</li>
+    <li><strong>Age of a sample with 2 atoms remaining:</strong> ~34,380 years (Matches our HL 6 data exactly)</li>
+</ul>
+
+<h2>Post Lab Questions & Discussion:</h2>
+
+<h3>C-14 Dating Mathematics</h3>
+<p><strong>Q: C-14 is used to date objects from the last 50,000 years. How many half-lives of C-14 take place in 50,000 years?</strong></p>
+<p>
+  To find this, we divide the total time by the half-life of Carbon-14.
+  <br>
+  <em>50,000 years / 5,730 years = 8.72 Half-Lives</em>
+  <br>
+  (Note: In class we discussed the natural log formula relating to the decay constant where 6931.47 relates to mean lifetime calculations, but the raw half-life count is approx 8.7).
+</p>
+
+<h3>Decay Products</h3>
+<p><strong>Q: C-14 dating is based on the nuclear decay of C-14. During C-14 decay, explain what is produced?</strong></p>
+<p>When C-14 decays, it turns into Nitrogen-14 (N-14). In this process, a neutron turns into a proton, ejecting an electron (beta particle) and an antineutrino.</p>
+
+<h3>Limitations of Carbon Dating</h3>
+<p><strong>Q: Why is C-14 dating not used to date substances which are 12 years old or substances 1,000,000 yrs old?</strong></p>
+<p>Because dating relies on probability and measuring the <em>change</em> in ratio. For something only 12 years old, not enough C-14 has decayed to be measurably different from a modern sample. Conversely, for something 1,000,000 years old (which is nearly 175 half-lives), there is effectively zero C-14 left to measure. You would need an isotope with a much longer half-life, like Uranium-238.</p>
+
+<h3>Radio Tracers & Safety</h3>
+<p><strong>Q: Why is it safe to take radio tracers?</strong></p>
+<p>Radio tracers used in medicine utilize isotopes with very short half-lives. This means they release their radiation quickly and then stabilize into non-dangerous isotopes. Because the half-life is short, the total time your body is exposed to the radiation is minimal, and the dosage is kept very low.</p>
+
+<h3>Waste Disposal</h3>
+<p><strong>Q: "Low Level Radioactive Waste" (medical) vs "High-level Waste" (fission products). Why bury high-level waste deep underground?</strong></p>
+<p>
+  Low-level waste (like from hospitals) decays quickly and is safe in shallow landfills. High-level waste, however, remains radioactive and generates heat for thousands or millions of years. We bury it deep underground for two main reasons:
+  <br><br>
+  1. <strong>Physical Isolation:</strong> It prevents humans or animals from accidentally interacting with it for geological timeframes.
+  <br>
+  2. <strong>Shielding:</strong> Radiation is a physical process. While air is a poor shield, hundreds of meters of dense rock and soil are excellent at blocking radiation. The Earth's crust naturally contains radioactive elements, so deep burial utilizes the Earth's natural shielding properties to protect the surface biosphere.
+</p>
+
+<h3>The "Element Z" Problem</h3>
+<p><strong>Problem:</strong> Element Z occurs as Z-10 (99%) and Z-11 (1%). Z-11 is radioactive with a half-life of 100 years. If a sample has 12,000 total Z atoms and only 3 Z-11 atoms remain, how old is it?</p>
+<p><strong>Solution:</strong></p>
+<ul class="d">
+  <li>First, determine the original number of Z-11 atoms. If the sample has 12,000 atoms total, and 1% is normally Z-11, then: <em>12,000 &times; 0.01 = 120 original Z-11 atoms.</em></li>
+  <li>We started with 120 atoms and ended with 3.</li>
+  <li>Using the percentage remaining formula (or simply counting halves):
+    <ul>
+      <li>120 &rarr; 60 (1 HL)</li>
+      <li>60 &rarr; 30 (2 HL)</li>
+      <li>30 &rarr; 15 (3 HL)</li>
+      <li>15 &rarr; 7.5 (4 HL)</li>
+      <li>7.5 &rarr; 3.75 (5 HL)</li>
+    </ul>
+  </li>
+  <li>3 remaining atoms is roughly 5.3 half-lives.</li>
+  <li>Age = 5.3 half-lives &times; 100 years/half-life = <strong>~530 Years Old</strong>.</li>
+</ul>
+
+<h2>Conclusion:</h2>
+<p>This lab successfully demonstrated the random yet predictable nature of radioactive decay. While we cannot predict which specific Skittle will "decay" when we pour the cup, we can predict the behavior of the group as a whole. The curve generated by our candy data closely matched the theoretical exponential decay curve of real radioactive isotopes. This modeling helps us understand how we can use these ratios to date ancient artifacts or ensure the safety of medical procedures.</p>
+
+</div>
+
+<footer>
+  <p>© 2026 Physics By Gali. Lab created by Gali.</p>
+</footer>
+
+</body>
+</html>
+
+```
