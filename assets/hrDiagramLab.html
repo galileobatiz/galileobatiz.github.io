@@ -145,24 +145,26 @@ footer {
       <th>Parallax (arcsec)</th>
       <th>App. Brightness ($W/m^2$)</th>
       <th>$\lambda_{peak}$ ($\text{\AA}$)</th>
-      <th>Temp (K)</th>
       <th>Dist (pc)</th>
+      <th>Temp (K)</th>
+      <th>Luminosity ($L/L_{\odot}$)</th>
+      <th>Radius ($R/R_{\odot}$)</th>
     </tr>
   </thead>
   <tbody>
-    <tr><td>Fomalhaut</td><td>0.13</td><td>8.6e-09</td><td>3400</td><td>8523</td><td>7.69</td></tr>
-    <tr><td>Aldebaran</td><td>0.054</td><td>3.3e-08</td><td>7300</td><td>3970</td><td>18.52</td></tr>
-    <tr><td>Alpheratz</td><td>0.033</td><td>7.0e-09</td><td>2200</td><td>13172</td><td>30.30</td></tr>
-    <tr><td>Eps. Eridani</td><td>0.311</td><td>8.5e-10</td><td>5700</td><td>5084</td><td>3.22</td></tr>
-    <tr><td>Capella A</td><td>0.078</td><td>1.5e-08</td><td>5300</td><td>5468</td><td>12.82</td></tr>
-    <tr><td>Alpha Cen. A</td><td>0.742</td><td>2.6e-08</td><td>5000</td><td>5796</td><td>1.35</td></tr>
-    <tr><td>Betelgeuse</td><td>0.008</td><td>1.12e-07</td><td>9400</td><td>3083</td><td>125.0</td></tr>
-    <tr><td>Sirius A</td><td>0.379</td><td>1.1e-07</td><td>3100</td><td>9348</td><td>2.64</td></tr>
-    <tr><td>Vega</td><td>0.13</td><td>2.88e-08</td><td>3000</td><td>9660</td><td>7.69</td></tr>
-    <tr><td>Rigel</td><td>0.004</td><td>3.72e-08</td><td>2600</td><td>11146</td><td>250.0</td></tr>
+    <tr><td>Fomalhaut</td><td>0.13</td><td>8.6e-09</td><td>3400</td><td>7.69</td><td>8529.4</td><td>15.91</td><td>1.84</td></tr>
+    <tr><td>Aldebaran</td><td>0.054</td><td>3.3e-08</td><td>7300</td><td>18.52</td><td>3972.6</td><td>353.80</td><td>40.09</td></tr>
+    <tr><td>Alpheratz</td><td>0.033</td><td>7.0e-09</td><td>2200</td><td>30.30</td><td>13181.8</td><td>200.96</td><td>2.74</td></tr>
+    <tr><td>Eps. Eridani</td><td>0.311</td><td>8.5e-10</td><td>5700</td><td>3.22</td><td>5087.7</td><td>0.27</td><td>0.68</td></tr>
+    <tr><td>Capella A</td><td>0.078</td><td>1.5e-08</td><td>5300</td><td>12.82</td><td>5471.7</td><td>77.08</td><td>9.86</td></tr>
+    <tr><td>Alpha Cen. A</td><td>0.742</td><td>2.6e-08</td><td>5000</td><td>1.35</td><td>5800.0</td><td>1.48</td><td>1.22</td></tr>
+    <tr><td>Betelgeuse</td><td>0.008</td><td>1.12e-07</td><td>9400</td><td>125.0</td><td>3085.1</td><td>54710.14</td><td>826.70</td></tr>
+    <tr><td>Sirius A</td><td>0.379</td><td>1.1e-07</td><td>3100</td><td>2.64</td><td>9354.8</td><td>23.94</td><td>1.88</td></tr>
+    <tr><td>Vega</td><td>0.13</td><td>2.88e-08</td><td>3000</td><td>7.69</td><td>9666.7</td><td>53.28</td><td>2.63</td></tr>
+    <tr><td>Rigel</td><td>0.004</td><td>3.72e-08</td><td>2600</td><td>250.0</td><td>11153.8</td><td>72686.33</td><td>72.90</td></tr>
   </tbody>
 </table>
-<p style="font-size: 14px; font-style: italic;">*Selection of primary data. Full data set contains 30+ stars including white dwarfs and supergiants.*</p>
+<p style="font-size: 14px; font-style: italic;">*for all the stars*</p>
 </div>
 
 <h3>Individual Star: YZ Ceti</h3>
@@ -177,7 +179,7 @@ footer {
 
 <figure style="text-align: center;">
   <div style="width: 600px; height: 350px; background-color: #eee; border: 1px solid #ccc; margin: auto; display: flex; align-items: center; justify-content: center;">
-    <p>[Insert HR Diagram Scatter Plot Image Here]</p>
+ <img src="/images/hrDiagram.png" alt="HR Diagram scatterplot" width="600" style="border: 1px solid #ccc;">
   </div>
   <figcaption style="font-size: 16px; font-style: italic;">Final HR Diagram</figcaption>
 </figure>
@@ -210,7 +212,6 @@ footer {
 </footer>
 
 <script>
-  // Simple navigation script from original template
   const allLinks = [
     { text: 'Vector Lab', href: 'resultantLab.html' },
     { text: 'Free Fall Lab', href: 'freeFallLab.html' },
