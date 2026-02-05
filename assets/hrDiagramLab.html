@@ -1,1 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali - HR Diagram Lab</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 100%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+.w3-top {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+.w3-bar {
+  width: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-bar-item {
+  padding: 8px 16px;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+.w3-right { float: right; }
+.w3-hide-small { display: block; }
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
 
+<div class="w3-top">
+  <div class="w3-bar" style="letter-spacing:4px;">
+    <a href="../" class="w3-bar-item">Le Physics</a>
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+        </div>
+  </div>
+</div>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 80px auto 30px auto; max-width: 1000px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;">HR Diagram Lab: Advanced Astrophysics</h1>
+<p style="text-align: center;"><em>Gali — 2-05-26</em></p>
+<p style="text-align: center;">  im a star! </p>
+
+<h2>Intro:</h2>
+<p>The goal of this lab is to make an original Hertzsprung-Russell (HR) Diagram using observational stellar data. By calculating luminosity, temperature, and radius from parallax and peak wavelength, we can map stars to their lifecycle stages and better the cosmos. By studying a specific star we can gain information on how specific stars behave and evolve with respect to the diagram. I hypothesize that my red dwarf star will be on the bottom right of the diagram. </p>
+
+<h2>Materials:</h2>
+<ul class="d">
+  <li>Stellar Data Tables</li>
+  <li>Excel or Google Sheets</li>
+  <li>Physics Reference Sheets (for constants)</li>
+</ul>
+
+<h2>Procedure:</h2>
+<ol class="a">
+  <li>
+    <strong>Data</strong>
+    <p>Construct a spreadsheet containing the raw data for the assigned stars, including Parallax ($p$), Apparent Brightness ($b$), and Peak Wavelength ($\lambda_{peak}$).</p>
+  </li>
+  <li>
+    <strong>Analysis</strong>
+    <p>Program the following columns using astrophysical formulas:</p>
+    <ul>
+      <li><strong>Distance ($d$):</strong> $d = \frac{1}{p}$ (in parsecs)</li>
+      <li><strong>Luminosity ($L$):</strong> Using the Inverse Square Law $L = 4\pi d^2 b$</li>
+      <li><strong>Temperature ($T$):</strong> Using Wien’s Law $T = \frac{2.898 \times 10^7 \text{ K}\cdot\text{\AA}}{\lambda_{peak}}$</li>
+      <li><strong>Radius ($R$):</strong> Using Stefan-Boltzmann Law $L = 4\pi R^2 \sigma T^4$</li>
+    </ul>
+  </li>
+  <li>
+    <strong>Graphing</strong>
+    <p>Create a scatter plot of Temperature ($x$-axis) vs. Luminosity ($y$-axis). <strong>Note:</strong> Set the $y$-axis to a logarithmic scale and <strong>reverse</strong> the $x$-axis so temperature decreases from left to right.</p>
+  </li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+
+<div style="overflow-x: auto;">
+<table>
+  <thead>
+    <tr>
+      <th>Star Name</th>
+      <th>Parallax (arcsec)</th>
+      <th>App. Brightness ($W/m^2$)</th>
+      <th>$\lambda_{peak}$ ($\text{\AA}$)</th>
+      <th>Temp (K)</th>
+      <th>Dist (pc)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Fomalhaut</td><td>0.13</td><td>8.6e-09</td><td>3400</td><td>8523</td><td>7.69</td></tr>
+    <tr><td>Aldebaran</td><td>0.054</td><td>3.3e-08</td><td>7300</td><td>3970</td><td>18.52</td></tr>
+    <tr><td>Alpheratz</td><td>0.033</td><td>7.0e-09</td><td>2200</td><td>13172</td><td>30.30</td></tr>
+    <tr><td>Eps. Eridani</td><td>0.311</td><td>8.5e-10</td><td>5700</td><td>5084</td><td>3.22</td></tr>
+    <tr><td>Capella A</td><td>0.078</td><td>1.5e-08</td><td>5300</td><td>5468</td><td>12.82</td></tr>
+    <tr><td>Alpha Cen. A</td><td>0.742</td><td>2.6e-08</td><td>5000</td><td>5796</td><td>1.35</td></tr>
+    <tr><td>Betelgeuse</td><td>0.008</td><td>1.12e-07</td><td>9400</td><td>3083</td><td>125.0</td></tr>
+    <tr><td>Sirius A</td><td>0.379</td><td>1.1e-07</td><td>3100</td><td>9348</td><td>2.64</td></tr>
+    <tr><td>Vega</td><td>0.13</td><td>2.88e-08</td><td>3000</td><td>9660</td><td>7.69</td></tr>
+    <tr><td>Rigel</td><td>0.004</td><td>3.72e-08</td><td>2600</td><td>11146</td><td>250.0</td></tr>
+  </tbody>
+</table>
+<p style="font-size: 14px; font-style: italic;">*Selection of primary data. Full data set contains 30+ stars including white dwarfs and supergiants.*</p>
+</div>
+
+<h3>Individual Star: YZ Ceti</h3>
+<p>I analyzed <strong>YZ Ceti</strong>:</p>
+<ul class="d">
+    <li><strong>Given Log(L/Lsun):</strong> -3.75</li>
+    <li><strong>Given Temp:</strong> 2,670 K</li>
+    <li><strong>Given Absolute Magnitude M(v):</strong>14.1</li>
+    <li><strong>Googled Parallax:</strong> 0.269</li>
+    <li><strong>Stellar Classification:</strong> M-type Main Sequence (Red Dwarf)</li>
+</ul>
+
+<figure style="text-align: center;">
+  <div style="width: 600px; height: 350px; background-color: #eee; border: 1px solid #ccc; margin: auto; display: flex; align-items: center; justify-content: center;">
+    <p>[Insert HR Diagram Scatter Plot Image Here]</p>
+  </div>
+  <figcaption style="font-size: 16px; font-style: italic;">Final HR Diagram</figcaption>
+</figure>
+
+<h2>Data Analysis:</h2>
+
+<p><strong>What class of star is your star? Is it on the main sequence?</strong></p>
+<p>My star, YZ Ceti, is a Red Dwarf. It’s on the lower-right end of the main sequence, where the low temperature, low-luminosity stars live.</p>
+
+<p><strong>What are the core processes currently occurring in your star?</strong></p>
+<p>Because it is a Main Sequence star, it is currently fusing Hydrogen into Helium. Since it's a Red Dwarf, this process is incredibly slow and relatively stable, lasting for trillions of years.</p>
+
+<p><strong>How close is the star to the end of its life?</strong></p>
+<p>Not close at all. Red dwarfs have huge  lifespans due to their slow fuel consumption, so YZ Ceti will likely stay on the main sequence for trillions of years, which is much longer than the current age of the universe.</p>
+
+<p><strong>How does the star compare to our Sun (in size, temperature, and luminosity)?</strong></p>
+<p>YZ Ceti is significantly smaller, cooler, and less bright than our sun.</p>
+
+<h3>Comparative Astrophysics</h3>
+<p><strong>Compare your star to other classmates’ stars. What conclusion do you come to about what types of stars are most prevalent?</strong></p>
+<p>While our "famous star" list includes giants like Betelgeuse and Rigel, data shows that low-mass stars (Red Dwarfs) like YZ Ceti are way more common. The "rare" stars are the high-mass types or the Supergiants, which are bright and easy to see, but die fast and are few in number. Also, in my hypothetical future scenario where humanity lives billions of years we will likely migrate to Red Dwarfs which are more reliable.</p>
+
+<h2>Conclusion:</h2>
+<p>My hypothesis of the star being on the bottom right resulted to be correct, and the graph overall lines up pretty well with the example. Constructing the HR diagram does two things by both revealing hidden patterns of the universe(like the main sequence), and showing us how unusual these patterns can be. By just looking at the relationship between how hot a star is and how much energy it puts out, we can determine its size, its age, and even what's happening in the core.</p>
+
+</div>
+
+<footer>
+  <p>© 2026 Physics By Gali. Lab created by Gali.</p>
+</footer>
+
+<script>
+  // Simple navigation script from original template
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Skittles Half-Life', href: 'halfLifeLab.html' },
+    { text: "HR Diagram Lab", href: 'hrDiagram.html' }
+  ];
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+  const navContainer = document.getElementById('random-nav-links');
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+</body>
+</html>
