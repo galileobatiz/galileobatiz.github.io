@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Physics By Gali</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="stylesheet.css">
+<style>
+body {
+  font-family: 'Georgia', serif;
+  line-height: 1.6;
+  font-size: 18px;
+  background-color: #fdfdfd;
+  padding-bottom: 60px;
+}
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #222;
+}
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-top: 30px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+h3 {
+  font-size: 22px;
+  margin-top: 25px;
+}
+ul.d, ol.a {
+  padding-left: 40px;
+  margin-top: 10px;
+}
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  width: 90%;
+}
+table, th, td {
+  border: 1px solid #ccc;
+}
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+pre {
+  background: #f7f7f7;
+  padding: 10px;
+  border-left: 4px solid #999;
+  font-size: 16px;
+  overflow-x: auto;
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+  margin-top: 40px;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+.w3-top {
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+.w3-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+}
+.w3-bar-item {
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+}
+.w3-card {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+.w3-right {
+    display: flex; 
+}
+.w3-hide-small {
+}
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+</style>
+</head>
+<body class="w3-white">
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    
+    <a href="../" class="w3-bar-item w3-button">Le Physics</a>
+    
+    <div class="w3-right w3-hide-small" id="random-nav-links">
+    </div>
+
+  </div>
+</div>
+
+<script>
+  const allLinks = [
+    { text: 'Vector Lab', href: 'resultantLab.html' },
+    { text: 'Free Fall Lab', href: 'freeFallLab.html' },
+    { text: 'Pumpkin Chunkin', href: 'pumpkinChunkin.html' },
+    { text: 'Friction Lab', href: 'frictionLab.html' },
+    { text: "Hooke's Law Lab", href: 'hookesLawLab.html' },
+    { text: "Stair climbing Lab", href: 'stairclimbingLab.html' },
+    { text: "Chair Push Lab", href: 'chairPushLab.html' },
+    { text: "Kirchhoff's Law Lab", href: 'kirchhoffsLawLab.html' },
+    { text: "Roller Coaster Lab", href: 'rollerCoasterLab.html' },
+    { text: "Slide Lab", href: 'slideLab.html' },
+    { text: "Magnet Field Lab", href: 'magnetFieldLab.html' }
+  ];
+
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
+  const shuffledLinks = shuffle(allLinks);
+  const linksToShow = shuffledLinks.slice(0, 3);
+
+  const navContainer = document.getElementById('random-nav-links');
+
+  let navHTML = '';
+  for (const link of linksToShow) {
+    navHTML += `<a href="${link.href}" class="w3-bar-item w3-button">${link.text}</a>`;
+  }
+  navContainer.innerHTML = navHTML;
+</script>
+
+<div style="background-color: #ffffff; border: 1px solid #ddd; padding: 20px; margin: 90px auto 30px auto; max-width: 900px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1);">
+
+<h1 style="text-align: center;"> Cosmic Ray Lab</h1>
+<p style="text-align: center;"><em> Gali, Yona, Tori, Ananya— March 16, 2026</em></p>
+
+<h2>Introduction:</h2>
+<p>
+In this lab we attempted to observe cosmic rays, which are charged particles hurtling through the universe with enormous energy, but invisible as they impact earth all around us. Using a cloud chamber will allow us to see the trail of the cosmic rays as they break the gas molecules. I predict we will be able to observe cosmic rays with this setup.
+</p>
+
+<h2>Materials:</h2>
+<ul class="d">
+    <li>A small plastic hemispherical aquarium</li>
+    <li>A high-powered flashlight (with greater intensity than a phone’s flashlight)</li>
+    <li>A metal plate or cover for aquarium, from 1/32" to 1/16" in thickness</li>
+    <li>Black electrical tape</li>
+    <li>1 - 3 pieces of 12" x 12" felt</li>
+    <li>A box that snugly fits around the base of the aquarium</li>
+    <li>A piece of styrofoam or padding just less high than the box</li>
+    <li>Duct tape</li>
+    <li>Clear Silicone Sealant</li>
+    <li>12 oz. of 100% pure isopropyl alcohol</li>
+    <li>1 lb of dry ice, cut into thin (1/4" to 1/2" thick) slices</li>
+</ul>
+
+<h2>Procedure:</h2>
+<h3>Day 1: Preparing the Chamber</h3>
+<ol class="a">
+    <li>Ensure the aquarium is clean and dry. Fold pieces of felt lengthwise to create two 2" wide strips of felt padding. Staple the folded strips so they do not come undone.</li>
+    <li>Using silicone sealant liberally, glue the padded strips to the inside of the aquarium, along the longer bottom sides, or around the circular base. Do not cover the very bottom/sides, as you will be turning the aquarium upside down to view through them. Let the glue set overnight.</li>
+    <li>Prepare the top of the aquarium (which will serve as the bottom). Cover the aluminum plate with black electrical tape on one side only to make the particle tracks easier to see. Trim the excess tape.</li>
+    <li>Find a cardboard box slightly bigger in diameter than your aquarium. Place the foam piece inside the box. It should have a "springiness" to press the dry ice up against the metal plate later.</li>
+</ol>
+
+<h3>Day 2: Operating the Chamber</h3>
+<ol class="a">
+    <li>Soak the felt with the alcohol, and pour a thin layer onto the electrical tape layer of the aluminum plate.</li>
+    <li>Invert the aquarium over the aluminum plate so the edges are in contact with the black tape. Duct tape the base of the aquarium so there are no air leaks.</li>
+    <li>Wearing gloves, put pieces of dry ice in the base on top of the foam. Place the alcohol-soaked aquarium upside-down so the metal plate is in direct contact with the exposed dry ice. Let cool for 10-15 minutes.</li>
+    <li>Turn on the flashlight and position the beam through the side of the chamber near the bottom. The high temperature at the top vaporizes the alcohol, while the extreme cold at the bottom supercools it. Look for a rain-like mist.</li>
+    <li>Wait for charged cosmic rays to pass through, ionizing the vapor and triggering condensation along their path, creating visible droplet tracks.</li>
+</ol>
+
+<h2>Data and Analysis:</h2>
+<p>
+Footage that hopefully works?
+</p>
+
+<video controls>
+  <source src="cloudChamber.mov" type="video/quicktime">
+</video>
+
+<p>
+On the first day, we were able to see the vapor "waterfall" flare up to an impressive sight and many trails, but the ability to see them was short lived, and neither trails nor waterfall were soon visible. On the second day we were able to see a smaller waterfall for a very long time but the sight of trails was questionable, as none of them were quite so distinct as day one. 
+</p>
+
+<h2>Error Analysis:</h2>
+<p>
+The first day we did the lab, we wrapped electrical tape all the way around the metal plate, and placed that along with the whole concoction directly onto a large flat piece of dry ice. This resulted in a very cold surface that was sufficient to create the successful cloud chamber, but I suspect that upon melting slightly, the dry ice was no longer in contact with the plate, resulting in a very cold environment but no longer enough to see rays. 
+</p>
+<p>
+The second day we did the lab we removed the electrical tape from the ice side of the metal plate, and achieved a decent vapor waterfall, but I suspect that there still wasn't enough contact with the ice or enough cold to make the vapor clear enough that cosmic rays would be visible, as fleeting as they are. 
+</p>
+<p>
+A couple of ways we could have improved this experiment are: We could have been extra proactive with the dry ice-plate contact (i.e. carving a circle of dry ice and then insulating all of the metal with electrical tape except for that exact circle, for perfect contact), and we could have had a video running the whole time to remove the many ambiguities that resulted from disagreements of whether or not cosmic rays were seen. A video could have allowed us to play back the footage and determine for sure. Lastly, a square/rectangular/box-shaped clear container may have simplified felting, gluing, and attachment to the metal plate.
+</p>
+
+<h2>Conclusion:</h2>
+<p>
+In conclusion, my hypothesis was correct and we were able to spot multiple cosmic rays, but what kinds were unclear since we had no magnetic field to curve them. Practical uses of being able to spot or understand cosmic rays include being able to test for protection against them, because they might interfere with important computation processes in airplanes or banking, or set off detectors trying to sense very subtle phenomena.
+</p>
+
+</div>
+
+<footer>
+  <p>© 2026 Physics By Gali</p>
+</footer>
+
+</body>
+</html>
